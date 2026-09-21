@@ -1,1 +1,11 @@
-
+{
+  "name": "MediCore Hospital Management System",
+  "short_name": "MediCore",
+  "description": "Offline-first hospital management system",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#0f766e",
+  "orientation": "portrait-primary",
+  "icons": []
+}
