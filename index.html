@@ -1,41 +1,2995 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#0f766e"><title>MediCore — Hospital Management System</title><style>
-:root{--p:#0f766e;--p2:#115e59;--bg:#f4f7f9;--card:#fff;--text:#17202a;--muted:#667085;--bd:#e4e7ec;--danger:#dc2626;--side:#0b1f2a}*{box-sizing:border-box}body{margin:0;font:14px Segoe UI,Arial,sans-serif;background:var(--bg);color:var(--text)}button,input,select,textarea{font:inherit}button{cursor:pointer}.app{display:flex;min-height:100vh}.side{width:245px;background:var(--side);color:#dbe7eb;position:fixed;inset:0 auto 0 0;z-index:20;overflow:auto}.brand{padding:22px;border-bottom:1px solid #ffffff18}.brand b{font-size:22px;color:#fff}.brand small{display:block;color:#91a6ae;margin-top:4px}.nav{padding:12px}.nav button{display:block;width:100%;border:0;background:0;color:#cbd7db;text-align:left;padding:11px;border-radius:9px;margin:2px 0}.nav button:hover,.nav button.active{background:#153844;color:#fff}.sect{font-size:10px;letter-spacing:1.3px;color:#718891;padding:15px 10px 6px;text-transform:uppercase}.main{margin-left:245px;width:calc(100% - 245px)}.top{height:68px;background:#fff;border-bottom:1px solid var(--bd);display:flex;align-items:center;justify-content:space-between;padding:0 22px;position:sticky;top:0;z-index:10}.hamb{display:none;border:0;background:0;font-size:22px}.online{display:flex;align-items:center;gap:7px;color:var(--muted);font-size:12px}.dot{width:8px;height:8px;border-radius:50%;background:#16a34a}.user{display:flex;align-items:center;gap:10px}.avatar{width:37px;height:37px;border-radius:50%;display:grid;place-items:center;background:#ccfbf1;color:#115e59;font-weight:700}.content{padding:22px;max-width:1600px;margin:auto}.head{display:flex;justify-content:space-between;gap:15px;margin-bottom:18px}.head h1{margin:0 0 5px;font-size:27px}.muted{color:var(--muted);font-size:13px}.grid{display:grid;gap:15px}.stats{grid-template-columns:repeat(4,1fr)}.two{grid-template-columns:1.3fr .7fr}.three{grid-template-columns:repeat(3,1fr)}.four{grid-template-columns:repeat(4,1fr)}.card{background:var(--card);border:1px solid var(--bd);border-radius:14px;padding:17px;box-shadow:0 7px 25px #0f172a0a}.stat{display:flex;justify-content:space-between}.num{font-size:27px;font-weight:750;margin-top:7px}.ico{width:40px;height:40px;border-radius:11px;background:#ecfdf5;display:grid;place-items:center;font-size:19px}.btn{border:1px solid var(--bd);background:#fff;padding:9px 12px;border-radius:8px}.btn:hover{background:#f8fafc}.primary{background:var(--p);color:#fff;border-color:var(--p)}.primary:hover{background:var(--p2)}.small{padding:6px 9px;font-size:12px}.actions,.tools{display:flex;gap:8px;flex-wrap:wrap}.tools{margin-bottom:14px}.input,.select,.area{width:100%;border:1px solid var(--bd);border-radius:8px;padding:10px;background:#fff}.area{min-height:95px;resize:vertical}.tablewrap{overflow:auto}.table{width:100%;border-collapse:collapse;min-width:650px}.table th,.table td{padding:11px 9px;border-bottom:1px solid var(--bd);text-align:left}.table th{font-size:10px;text-transform:uppercase;letter-spacing:.6px;color:var(--muted);background:#fafbfc}.badge{display:inline-block;border-radius:99px;padding:4px 8px;font-size:11px;font-weight:650}.green{background:#dcfce7;color:#166534}.amber{background:#fef3c7;color:#92400e}.red{background:#fee2e2;color:#991b1b}.blue{background:#dbeafe;color:#1e40af}.gray{background:#f1f5f9;color:#475569}.row{display:flex;justify-content:space-between;gap:12px;padding:10px 0;border-bottom:1px solid var(--bd)}.patienthead{display:flex;gap:15px;align-items:center}.photo{width:70px;height:70px;border-radius:13px;background:#ccfbf1;color:#115e59;display:grid;place-items:center;font-size:23px;font-weight:750;overflow:hidden}.photo img{width:100%;height:100%;object-fit:cover}.tabs{display:flex;gap:3px;overflow:auto;border-bottom:1px solid var(--bd);margin:18px -17px 16px;padding:0 17px}.tab{border:0;background:0;padding:10px;color:var(--muted);white-space:nowrap}.tab.active{color:var(--p);border-bottom:2px solid var(--p);font-weight:700}.timeline{padding-left:23px;position:relative}.timeline:before{content:"";position:absolute;left:6px;top:0;bottom:0;width:2px;background:#e2e8f0}.event{position:relative;margin-bottom:18px}.event:before{content:"";position:absolute;left:-21px;top:5px;width:8px;height:8px;border-radius:50%;background:var(--p);border:3px solid #d5faf4}.event p{color:var(--muted);margin:5px 0}.modal{display:none;position:fixed;inset:0;background:#02081799;z-index:50;align-items:center;justify-content:center;padding:15px}.modal.open{display:flex}.modalbox{background:#fff;width:min(720px,96vw);max-height:92vh;overflow:auto;border-radius:15px;padding:20px}.modalhead{display:flex;justify-content:space-between;align-items:center;margin-bottom:16px}.modalhead h2{margin:0}.close{border:0;background:#f1f5f9;border-radius:8px;width:33px;height:33px}.form{display:grid;grid-template-columns:1fr 1fr;gap:12px}.field label{display:block;font-size:12px;font-weight:650;margin-bottom:5px}.full{grid-column:1/-1}.toast{display:none;position:fixed;right:18px;bottom:18px;background:#0f172a;color:#fff;padding:11px 14px;border-radius:9px;z-index:100}.toast.show{display:block}.login{min-height:100vh;display:grid;place-items:center;background:linear-gradient(135deg,#09242f,#0f766e)}.loginbox{width:min(420px,92vw);background:#fff;padding:30px;border-radius:17px;box-shadow:0 25px 70px #0004}.loginlogo{font-size:29px;font-weight:800;color:var(--p)}.notice{background:#f0fdfa;border:1px solid #ccfbf1;padding:11px;border-radius:9px;font-size:12px;margin-top:14px}.empty{text-align:center;color:var(--muted);padding:30px}.switch{display:flex;gap:9px;align-items:center;padding:9px 0}.switch input{width:18px;height:18px;accent-color:var(--p)}
-@media(max-width:1050px){.stats{grid-template-columns:1fr 1fr}.two{grid-template-columns:1fr}.three,.four{grid-template-columns:1fr 1fr}}@media(max-width:760px){.side{transform:translateX(-100%);transition:.2s}.side.open{transform:none}.main{margin:0;width:100%}.hamb{display:block}.stats,.three,.four,.form{grid-template-columns:1fr}.content{padding:14px}.top{padding:0 14px}.head{flex-direction:column}}
-</style></head><body><div id="app"></div><div id="modal" class="modal"><div id="modalbox" class="modalbox"></div></div><div id="toast" class="toast"></div><script>
-const K='medicore_html_v1';const seed={hospital:{id:'HOSP-001',name:'MediCore Demo Hospital',address:'Lagos, Nigeria',phone:'+234 800 000 0000',email:'admin@medicore.demo',license:'MC-DEMO-2026',expiry:'2026-12-31'},modules:{billing:true,appointments:true,attendance:true,reports:true,notifications:true,laboratory:false,pharmacy:false,admissions:false,hmo:false,inventory:false},user:{name:'Dr. Hospital Owner',role:'Owner'},patients:[{id:'P-1001',name:'Adewale Johnson',gender:'Male',dob:'1988-04-13',phone:'08030000001',address:'Ikeja, Lagos',status:'Active',blood:'O+',genotype:'AA',created:'2026-09-18'},{id:'P-1002',name:'Ngozi Okafor',gender:'Female',dob:'1994-10-02',phone:'08030000002',address:'Yaba, Lagos',status:'Active',blood:'A+',genotype:'AS',created:'2026-09-19'},{id:'P-1003',name:'Ibrahim Musa',gender:'Male',dob:'1977-06-21',phone:'08030000003',address:'Surulere, Lagos',status:'Active',blood:'B+',genotype:'AA',created:'2026-09-20'}],staff:[{id:'S1',name:'Dr. Hospital Owner',role:'Owner',status:'Active'},{id:'S2',name:'Dr. Ada Bello',role:'Doctor',status:'Active'},{id:'S3',name:'Nurse Grace James',role:'Nurse',status:'Active'},{id:'S4',name:'Mary Reception',role:'Reception',status:'Active'},{id:'S5',name:'John Accounts',role:'Accounts',status:'Active'}],instructions:[{id:'I1',patient:'P-1001',patientName:'Adewale Johnson',to:'Dr. Ada Bello',priority:'Urgent',text:'Please review the latest vital signs and provide your assessment.',status:'Pending',created:'2026-09-20 10:20'}],clinical:[{id:'C1',patient:'P-1001',patientName:'Adewale Johnson',type:'Clinical Note',text:'Patient reviewed. Continue observation and follow-up.',author:'Dr. Ada Bello',date:'2026-09-20 09:40'},{id:'C2',patient:'P-1001',patientName:'Adewale Johnson',type:'Vital Signs',text:'BP 128/82 • Pulse 76 • Temp 36.7°C • SpO₂ 98%',author:'Nurse Grace James',date:'2026-09-20 09:20'}],appointments:[{patient:'Ngozi Okafor',doctor:'Dr. Ada Bello',date:'2026-09-21',time:'10:00',status:'Confirmed'},{patient:'Adewale Johnson',doctor:'Dr. Ada Bello',date:'2026-09-21',time:'11:30',status:'Waiting'}],invoices:[{id:'INV-001',patient:'Adewale Johnson',total:45000,paid:30000,date:'2026-09-20',status:'Part Paid'},{id:'INV-002',patient:'Ngozi Okafor',total:25000,paid:25000,date:'2026-09-19',status:'Paid'}],attendance:[{staff:'Dr. Ada Bello',date:'2026-09-21',in:'08:04',out:'',status:'Present'},{staff:'Nurse Grace James',date:'2026-09-21',in:'08:16',out:'',status:'Present'}],notifications:[{text:'New patient registered: Ibrahim Musa',time:'Today 08:45',read:false},{text:'Urgent instruction is awaiting acknowledgement',time:'Today 08:40',read:false}],audit:[{action:'Patient registered',user:'Mary Reception',time:'2026-09-20 08:45'},{action:'Clinical note added',user:'Dr. Ada Bello',time:'2026-09-20 09:40'}],sync:{status:'ONLINE',last:'2026-09-21 08:52',pending:0},license:{status:'TRIAL',plan:'7-Day Free Trial',start:'2026-09-18'}};
-let db=(()=>{try{return JSON.parse(localStorage.getItem(K))||structuredClone(seed)}catch(e){return structuredClone(seed)}})();
-db.migration=db.migration||{status:'Ready',source:'',lastRun:null,imported:0,updated:0,skipped:0,duplicates:0,provider:'AQUILLA',format:'CSV'};db.migration.provider=db.migration.provider||'';db.migration.format=db.migration.format||'CSV';
-db.users=db.users||db.staff.map(x=>({id:x.id,name:x.name,role:x.role,department:({Owner:'Administration',Doctor:'Clinical',Nurse:'Nursing',Reception:'Front Desk',Accounts:'Accounts',Laboratory:'Laboratory',Pharmacy:'Pharmacy'}[x.role]||x.role),status:x.status,password:'demo'}));
-if(!db.staff.some(x=>x.role==='Laboratory'))db.staff.push({id:'S6',name:'Lab Staff',role:'Laboratory',status:'Active'});
-if(!db.staff.some(x=>x.role==='Pharmacy'))db.staff.push({id:'S7',name:'Pharmacy Staff',role:'Pharmacy',status:'Active'});
-page='dashboard',pid=null,ptab='Overview';const save=()=>localStorage.setItem(K,JSON.stringify(db));const esc=s=>String(s??'').replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m]));const money=n=>new Intl.NumberFormat('en-NG',{style:'currency',currency:'NGN',maximumFractionDigits:0}).format(n||0);const init=n=>n.split(' ').map(x=>x[0]).slice(0,2).join('').toUpperCase();const age=d=>{if(!d)return'';let a=new Date().getFullYear()-new Date(d).getFullYear();let m=new Date().getMonth()-new Date(d).getMonth();if(m<0||m===0&&new Date().getDate()<new Date(d).getDate())a--;return a};const toast=t=>{let x=document.getElementById('toast');x.textContent=t;x.classList.add('show');setTimeout(()=>x.classList.remove('show'),2200)};const today=()=>new Date().toISOString().slice(0,10);function roleMeta(){return{Owner:{department:'Administration',nav:['dashboard','patients','appointments','clinical','instructions','staff','attendance','billing','reports','notifications','laboratory','pharmacy','migration','settings','license']},Doctor:{department:'Clinical',nav:['dashboard','patients','appointments','clinical','instructions']},Nurse:{department:'Nursing',nav:['dashboard','patients','clinical','instructions','attendance']},Reception:{department:'Front Desk',nav:['dashboard','patients','appointments']},Accounts:{department:'Accounts',nav:['dashboard','billing','reports']},Laboratory:{department:'Laboratory',nav:['dashboard','patients','laboratory']},Pharmacy:{department:'Pharmacy',nav:['dashboard','patients','pharmacy']}}[db.user?.role]||{department:'',nav:['dashboard']}}function allowed(p){return roleMeta().nav.includes(p)}function nav(p,l,i){return allowed(p)?`<button class="${page===p?'active':''}" onclick="go('${p}')">${i} &nbsp;${l}</button>`:''}function go(p){if(!allowed(p)){toast('Access restricted to your department');return}page=p;pid=null;render();document.querySelector('.side')?.classList.remove('open')}function stat(l,n,i){return`<div class="card stat"><div><div class="muted">${l}</div><div class="num">${n}</div></div><div class="ico">${i}</div></div>`}
-function render(){if(!db.user)return login();if(!allowed(page))page='dashboard';let rm=roleMeta();document.getElementById('app').innerHTML=`<div class="app"><aside class="side" id="side"><div class="brand"><b>MEDICORE</b><small>${esc(db.hospital.name)}</small></div><div class="nav"><div class="sect">Workspace</div>${nav('dashboard','Dashboard','⌂')}${nav('patients','Patients','◉')}${nav('appointments','Appointments','▣')}${nav('clinical','Clinical Records','✚')}${nav('instructions','Instructions','➤')}${nav('laboratory','Laboratory','⚗')}${nav('pharmacy','Pharmacy','▥')}${nav('billing','Billing','₦')}${nav('reports','Reports','▤')}${nav('attendance','Attendance','◷')}${nav('staff','Staff','♙')}${nav('notifications','Notifications','●')}<div class="sect">Administration</div>${nav('migration','EMR Migration','⇄')}${nav('settings','Settings','⚙')}${nav('license','License','◇')}</div></aside><main class="main"><header class="top"><button class="hamb" onclick="document.getElementById('side').classList.toggle('open')">☰</button><div class="online"><span class="dot"></span>${db.sync.status}<span>${esc(db.sync.last)}</span></div><div class="user"><div><b>${esc(db.user.name)}</b><div class="muted">${esc(db.user.role)} • ${esc(rm.department)}</div></div><div class="avatar">${init(db.user.name)}</div><button class="btn small" onclick="logout()">Logout</button></div></header><section class="content">${pageHTML()}</section></main></div>`}
-function pageHTML(){if(page==='dashboard')return dashboard();if(page==='patients')return patients();if(page==='patient')return patient();if(page==='appointments')return appointments();if(page==='clinical')return clinical();if(page==='instructions')return instructions();if(page==='staff')return staff();if(page==='attendance')return attendance();if(page==='billing')return billing();if(page==='reports')return reports();if(page==='notifications')return notifications();if(page==='laboratory')return optional('Laboratory');if(page==='pharmacy')return optional('Pharmacy');if(page==='migration')return migration();if(page==='settings')return settings();if(page==='license')return license();return optional(page[0].toUpperCase()+page.slice(1))}
-function dashboard(){let out=db.invoices.reduce((a,x)=>a+x.total-x.paid,0),todayAppts=db.appointments.filter(a=>a.date===today()),pending=db.instructions.filter(i=>i.status!=='Completed'),revenue=db.invoices.reduce((a,x)=>a+x.paid,0),active=db.staff.filter(x=>x.status==='Active').length;let owner=db.user.role==='Owner';return`<div class="head"><div><h1>${owner?'Hospital Command Center':'My '+esc(roleMeta().department)+' Dashboard'}</h1><div class="muted">${esc(db.hospital.name)} • ${new Date().toLocaleDateString()}</div></div><div class="actions">${owner?'<button class="btn" onclick="go(\'migration\')">⇄ Import Existing EMR</button>':''}<button class="btn primary" onclick="patientModal()">+ Register Patient</button></div></div>${owner?`<div class="grid stats">${stat('Total Patients',db.patients.length,'◉')}${stat("Today's Appointments",todayAppts.length,'▣')}${stat('Collected',money(revenue),'✓')}${stat('Outstanding',money(out),'₦')}${stat('Active Staff',active,'♙')}</div><div class="head" style="margin-top:24px"><div><h2 style="margin:0">Today at the Hospital</h2><div class="muted">Live operational snapshot requiring attention.</div></div></div><div class="grid three"><div class="card"><h3>Appointments</h3><div class="num">${todayAppts.length}</div><div class="muted">${todayAppts.filter(x=>x.status==='Waiting').length} waiting • ${todayAppts.filter(x=>x.status==='Confirmed').length} confirmed</div></div><div class="card"><h3>Attention</h3><div class="num">${pending.length}</div><div class="muted">pending staff instructions</div></div><div class="card"><h3>Data Protection</h3><div class="num" style="font-size:22px">${esc(db.sync.status)}</div><div class="muted">${db.migration.imported?db.migration.imported+' records migrated':'Migration ready'} • ${db.sync.pending} pending changes</div></div></div><div class="grid two" style="margin-top:15px"><div class="card"><h3>Recent Patients</h3>${ptable(db.patients.slice().reverse().slice(0,5))}</div><div class="card"><h3>Hospital Statistics</h3><div class="row"><span>Clinical records</span><b>${db.clinical.length}</b></div><div class="row"><span>Invoices</span><b>${db.invoices.length}</b></div><div class="row"><span>Laboratory</span><b>${db.modules.laboratory?'Enabled':'Ready to enable'}</b></div><div class="row"><span>Pharmacy</span><b>${db.modules.pharmacy?'Enabled':'Ready to enable'}</b></div><div class="row"><span>License</span><span class="badge amber">${db.license.status}</span></div></div></div><div class="grid two" style="margin-top:15px"><div class="card"><h3>Today's Appointments</h3>${arows(todayAppts)}</div><div class="card"><h3>Alerts & Instructions</h3>${irows(pending.slice(0,5))}</div></div>`:`<div class="grid stats">${stat('Patients',db.patients.length,'◉')}${stat("Today's Appointments",todayAppts.length,'▣')}${stat('Pending Tasks',pending.length,'➤')}</div><div class="grid two" style="margin-top:15px"><div class="card"><h3>My Department</h3><p class="muted">You are signed in as <b>${esc(db.user.role)}</b>. Records and tools outside your department are restricted.</p></div><div class="card"><h3>Today</h3><div class="row"><span>Appointments</span><b>${todayAppts.length}</b></div><div class="row"><span>Patients</span><b>${db.patients.length}</b></div><div class="row"><span>Pending instructions</span><b>${pending.length}</b></div></div></div>`}`}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<meta name="theme-color" content="#0f766e">
+<meta name="description" content="MediCore Hospital Management System">
+<link rel="manifest" href="./manifest.json">
+<title>MediCore Hospital Management System</title>
 
-function migration(){if(db.user.role!=='Owner')return optional('EMR Migration');return`<div class="head"><div><h1>EMR Migration Center</h1><div class="muted">A controlled path from the hospital's current EMR to MediCore — without retyping the patient database.</div></div><span class="badge green">${esc(db.migration.status)}</span></div><div class="grid three"><div class="card"><div class="muted">Migration principle</div><h3>Export once. Validate before import.</h3><p class="muted">Keep the original provider export untouched. MediCore works on a staging copy and shows what will be created, updated, matched or rejected before committing.</p></div><div class="card"><div class="muted">Current migration profile</div><h3>${esc(db.migration.provider||'AQUILLA')}</h3><p class="muted"><span class="badge amber">Adapter awaiting source profile</span><br>We will map AQUILLA from the hospital's actual export or backup structure when it is inspected. No AQUILLA format is assumed yet.</p></div><div class="card"><div class="muted">Migration safety</div><h3>Preview → Validate → Import</h3><p class="muted">Every completed migration is recorded in the audit trail and contributes to the sync queue.</p></div></div><div class="grid two" style="margin-top:15px"><div class="card"><h3>1. Identify the current EMR</h3><p class="muted">Record the provider name, export format and available modules. This determines the exact mapping adapter.</p><div class="form"><div class="field"><label>Current EMR provider</label><input class="input" id="migProvider" value="${esc(db.migration.provider||'')}" placeholder="e.g. Provider / EMR name"></div><div class="field"><label>Export format</label><select class="select" id="migFormat"><option ${db.migration.format==='CSV'?'selected':''}>CSV</option><option ${db.migration.format==='JSON'?'selected':''}>JSON</option><option ${db.migration.format==='Excel'?'selected':''}>Excel</option><option ${db.migration.format==='XML'?'selected':''}>XML</option><option ${db.migration.format==='Other'?'selected':''}>Other</option></select></div></div><button class="btn" style="margin-top:12px" onclick="saveMigrationProvider()">Save migration profile</button></div><div class="card"><h3>2. Import export package</h3><p class="muted">Current browser build accepts CSV and JSON. Excel/XML adapters can be added to match the actual provider export.</p><input id="migFile" class="input" type="file" accept=".csv,.json,text/csv,application/json" onchange="previewMigration(event)"><div id="migInfo" class="muted" style="margin-top:10px">No file selected.</div><div class="actions" style="margin-top:12px"><button class="btn" onclick="document.getElementById('migFile').click()">Choose Export</button><button class="btn primary" onclick="commitMigration()">Import to MediCore</button></div></div></div><div class="card" style="margin-top:15px"><h3>Migration workflow</h3><div class="grid four"><div><b>01</b><div class="muted">Export from old EMR</div></div><div><b>02</b><div class="muted">Map fields & identifiers</div></div><div><b>03</b><div class="muted">Preview duplicates & errors</div></div><div><b>04</b><div class="muted">Commit & verify totals</div></div></div><div class="notice" style="margin-top:12px"><b>Migration rule:</b> MediCore preserves the source MRN/patient number where possible. Matching is attempted by source ID/MRN, then phone, then exact name. A production migration should also preserve historical dates, encounters, diagnoses, prescriptions, laboratory results, documents and billing where those fields are available from the source export.</div></div><div id="migPreview" class="card" style="margin-top:15px"><h3>Migration preview</h3><p class="muted">Select an export to see detected records, fields and duplicate matches before importing.</p></div><div class="grid two" style="margin-top:15px"><div class="card"><h3>Migration history</h3><div class="row"><span>Provider</span><b>${esc(db.migration.provider||'AQUILLA')}</b></div><div class="row"><span>Format</span><b>${esc(db.migration.format||'—')}</b></div><div class="row"><span>Last source</span><b>${esc(db.migration.source||'—')}</b></div><div class="row"><span>Last run</span><b>${esc(db.migration.lastRun||'—')}</b></div><div class="row"><span>Imported</span><b>${db.migration.imported||0}</b></div><div class="row"><span>Updated</span><b>${db.migration.updated||0}</b></div><div class="row"><span>Skipped</span><b>${db.migration.skipped||0}</b></div></div><div class="card"><h3>Recommended handover pack</h3><p class="muted">Before switching systems, obtain a complete export plus a data dictionary from the existing provider. Keep a read-only copy of the old system during the transition and reconcile patient counts and key clinical totals after import.</p><button class="btn" onclick="downloadMigrationChecklist()">Download migration checklist</button></div></div>`}
-function saveMigrationProvider(){db.migration.provider=document.getElementById('migProvider').value.trim()||'Generic CSV / JSON';db.migration.format=document.getElementById('migFormat').value;db.audit.unshift({action:'Migration profile updated',user:db.user.name,time:new Date().toLocaleString()});save();toast('Migration profile saved');render()}
-function downloadMigrationChecklist(){let t='MEDICORE EMR MIGRATION CHECKLIST\n\n1. Identify current EMR provider and version.\n2. Request complete export and data dictionary.\n3. Request patient/MRN, encounters, diagnoses, prescriptions, lab, billing, appointments and document exports where available.\n4. Preserve the original export as read-only source archive.\n5. Run a MediCore dry preview and resolve duplicate/mapping issues.\n6. Import in a controlled migration window.\n7. Reconcile patient counts, clinical totals and financial totals.\n8. Keep the old EMR available in read-only mode until sign-off.\n';let b=new Blob([t],{type:'text/plain'}),a=document.createElement('a');a.href=URL.createObjectURL(b);a.download='MediCore-EMR-Migration-Checklist.txt';a.click();URL.revokeObjectURL(a.href)}
-let pendingMigration=null;function parseCSV(t){let lines=t.replace(/^\uFEFF/,'').split(/\r?\n/).filter(x=>x.trim());if(!lines.length)return[];let parse=r=>{let a=[],v='',q=false;for(let i=0;i<r.length;i++){let c=r[i];if(c==='"'){if(q&&r[i+1]==='"'){v+='"';i++}else q=!q}else if(c===','&&!q){a.push(v.trim());v=''}else v+=c}a.push(v.trim());return a};let h=parse(lines[0]);return lines.slice(1).map(l=>{let a=parse(l),o={};h.forEach((k,i)=>o[k]=a[i]||'');return o})}function normalizePatient(r){let get=(...keys)=>{let k=Object.keys(r).find(x=>keys.includes(x.toLowerCase().replace(/[^a-z0-9]/g,'')));return k?r[k]:''};return{id:get('id','patientid','patientnumber','mrn')||'P-MIG-'+Date.now()+'-'+Math.random().toString(36).slice(2,7),name:get('name','patientname','fullname'),gender:get('gender','sex'),dob:get('dob','dateofbirth','birthdate'),phone:get('phone','mobile','telephone'),address:get('address','residentialaddress'),blood:get('blood','bloodgroup'),genotype:get('genotype'),status:get('status')||'Active',created:today(),source:'EMR Migration'}}function previewMigration(e){let f=e.target.files?.[0];if(!f)return;let r=new FileReader();r.onload=()=>{try{let raw=f.name.toLowerCase().endsWith('.json')?JSON.parse(r.result):parseCSV(r.result);let pack=Array.isArray(raw)?{patients:raw}:{patients:raw.patients||raw.records||[],clinical:raw.clinical||raw.encounters||[],appointments:raw.appointments||[],invoices:raw.invoices||raw.billing||[]};pendingMigration={file:f.name,pack};let mapped=pack.patients.map(normalizePatient).filter(x=>x.name),dup=mapped.filter(x=>db.patients.some(p=>(x.id&&p.id===x.id)||(x.phone&&p.phone&&x.phone===p.phone)||(x.name&&p.name.toLowerCase()===x.name.toLowerCase())));let total=pack.patients.length+pack.clinical.length+pack.appointments.length+pack.invoices.length;document.getElementById('migInfo').innerHTML=`<b>${f.name}</b> • ${total} records detected across ${Object.keys(pack).filter(k=>pack[k].length).join(', ')}`;document.getElementById('migPreview').innerHTML=`<h3>Migration preview</h3><div class="grid stats">${stat('Patients',pack.patients.length,'◉')}${stat('Clinical',pack.clinical.length,'✚')}${stat('Appointments',pack.appointments.length,'▣')}${stat('Billing',pack.invoices.length,'₦')}${stat('Patient matches',dup.length,'!')}</div><div class="notice" style="margin-top:12px"><b>No retyping:</b> MediCore stages the export first. Patient matching uses source ID/MRN, then phone, then exact name. Clinical, appointment and billing rows are imported when the JSON package contains those sections.</div><div class="tablewrap" style="margin-top:12px"><table class="table"><tr><th>Name</th><th>ID/MRN</th><th>Phone</th><th>DOB</th><th>Match</th></tr>${mapped.slice(0,12).map(x=>{let d=db.patients.find(p=>(x.id&&p.id===x.id)||(x.phone&&p.phone&&x.phone===p.phone)||(x.name&&p.name.toLowerCase()===x.name.toLowerCase()));return`<tr><td>${esc(x.name)}</td><td>${esc(x.id)}</td><td>${esc(x.phone)}</td><td>${esc(x.dob)}</td><td>${d?'<span class="badge amber">Existing record</span>':'<span class="badge green">New</span>'}</td></tr>`}).join('')}</table></div>`}catch(err){toast('Could not read export file');document.getElementById('migInfo').textContent='Invalid CSV/JSON export.'}};r.readAsText(f)}function commitMigration(){if(!pendingMigration){toast('Choose an export first');return}let pack=pendingMigration.pack,mapped=pack.patients.map(normalizePatient).filter(x=>x.name),imp=0,upd=0,skip=0,dups=0;mapped.forEach(x=>{let idx=db.patients.findIndex(p=>(x.id&&p.id===x.id)||(x.phone&&p.phone&&x.phone===p.phone)||(x.name&&p.name.toLowerCase()===x.name.toLowerCase()));if(idx>=0){db.patients[idx]={...db.patients[idx],...x,id:db.patients[idx].id};upd++;dups++}else{db.patients.push(x);imp++}});pack.clinical.forEach(x=>{db.clinical.push({...x,id:x.id||'C-MIG-'+Date.now()+'-'+Math.random().toString(36).slice(2,6),date:x.date||today(),author:x.author||'EMR Migration'})});pack.appointments.forEach(x=>db.appointments.push({...x}));pack.invoices.forEach(x=>db.invoices.push({...x}));let importedTotal=imp+pack.clinical.length+pack.appointments.length+pack.invoices.length;db.migration={status:'Completed',source:pendingMigration.file,lastRun:new Date().toLocaleString(),imported:importedTotal,updated:upd,skipped:skip,duplicates:dups};db.sync.pending+=importedTotal+upd;db.audit.unshift({action:'EMR migration completed',user:db.user.name,time:new Date().toLocaleString()});save();pendingMigration=null;toast(`Migration complete: ${importedTotal} imported, ${upd} updated`);render()}
-function ptable(a){if(!a.length)return'<div class="empty">No patients.</div>';return`<div class="tablewrap"><table class="table"><thead><tr><th>Patient</th><th>Age</th><th>Phone</th><th>Status</th><th></th></tr></thead><tbody>${a.map(p=>`<tr><td><b>${esc(p.name)}</b><div class="muted">${p.id}</div></td><td>${age(p.dob)}</td><td>${esc(p.phone)}</td><td><span class="badge green">${p.status}</span></td><td><button class="btn small" onclick="openPatient('${p.id}')">Open</button></td></tr>`).join('')}</tbody></table></div>`}
-function patients(){return`<div class="head"><div><h1>Patients</h1><div class="muted">Registration, profiles and timelines.</div></div><button class="btn primary" onclick="patientModal()">+ Register Patient</button></div><div class="card"><div class="tools"><input id="ps" class="input" style="max-width:430px" placeholder="Search patient number, name or phone" oninput="filterPatients()"></div><div id="plist">${ptable(db.patients)}</div></div>`}function filterPatients(){let q=document.getElementById('ps').value.toLowerCase();document.getElementById('plist').innerHTML=ptable(db.patients.filter(p=>`${p.id} ${p.name} ${p.phone}`.toLowerCase().includes(q)))}
-function openPatient(id){pid=id;ptab='Overview';page='patient';render()}function patient(){let p=db.patients.find(x=>x.id===pid);if(!p)return patients();let ev=db.clinical.filter(x=>x.patient===p.id).map(x=>({d:x.date,t:x.type,x:x.text,u:x.author}));ev.push(...db.instructions.filter(x=>x.patient===p.id).map(x=>({d:x.created,t:'Staff Instruction',x:x.text,u:'Owner → '+x.to})));ev.sort((a,b)=>b.d.localeCompare(a.d));let body=ptab==='Overview'?`<div class="grid three"><div><span class="muted">DOB</span><br><b>${p.dob} (${age(p.dob)})</b></div><div><span class="muted">Blood Group</span><br><b>${esc(p.blood||'—')}</b></div><div><span class="muted">Genotype</span><br><b>${esc(p.genotype||'—')}</b></div><div><span class="muted">Address</span><br><b>${esc(p.address||'—')}</b></div><div><span class="muted">Phone</span><br><b>${esc(p.phone)}</b></div><div><span class="muted">Registered</span><br><b>${p.created}</b></div></div>`:ptab==='Timeline'?`<div class="timeline">${ev.map(e=>`<div class="event"><b>${esc(e.t)} <span class="muted">${esc(e.d)}</span></b><p>${esc(e.x)}<br><small>By ${esc(e.u)}</small></p></div>`).join('')||'<div class="empty">No events.</div>'}</div>`:ptab==='Clinical Notes'?clinicalFor(p,'Clinical Note'):ptab==='Vital Signs'?clinicalFor(p,'Vital Signs'):ptab==='Billing'?billFor(p):ptab==='Instructions'?irows(db.instructions.filter(x=>x.patient===p.id)): '<div class="empty">Audit events are recorded in the system audit trail.</div>';return`<div class="head"><button class="btn small" onclick="go('patients')">← Patients</button><div class="actions"><button class="btn" onclick="clinicalModal('${p.id}')">+ Clinical Note</button><button class="btn primary" onclick="instructionModal('${p.id}')">+ Instruction</button></div></div><div class="card"><div class="patienthead"><div class="photo">${init(p.name)}</div><div><h1 style="margin:0">${esc(p.name)}</h1><div class="muted">${p.id} • ${p.gender} • ${age(p.dob)} years • ${esc(p.phone)}</div><span class="badge green" style="margin-top:7px">${p.status}</span></div></div><div class="tabs">${['Overview','Timeline','Clinical Notes','Vital Signs','Billing','Instructions','Audit History'].map(t=>`<button class="tab ${ptab===t?'active':''}" onclick="ptab='${t}';render()">${t}</button>`).join('')}</div>${body}</div>`}
-function clinicalFor(p,type){let a=db.clinical.filter(x=>x.patient===p.id&&x.type===type);return`<div class="actions" style="margin-bottom:12px"><button class="btn primary" onclick="${type==='Vital Signs'?`vitalsModal('${p.id}')`:`clinicalModal('${p.id}')`}">+ Add</button></div>${a.map(x=>`<div class="card" style="box-shadow:none;margin-bottom:8px"><b>${esc(x.text)}</b><div class="muted">${esc(x.date)} • ${esc(x.author)}</div></div>`).join('')||'<div class="empty">No entries.</div>'}`}
-function billFor(p){let a=db.invoices.filter(x=>x.patient===p.name);return a.length?`<div class="tablewrap"><table class="table"><tr><th>Invoice</th><th>Date</th><th>Total</th><th>Paid</th><th>Balance</th></tr>${a.map(x=>`<tr><td>${x.id}</td><td>${x.date}</td><td>${money(x.total)}</td><td>${money(x.paid)}</td><td>${money(x.total-x.paid)}</td></tr>`).join('')}</table></div>`:'<div class="empty">No invoices.</div>'}
-function appointments(){return`<div class="head"><div><h1>Appointments</h1><div class="muted">Patient appointments and schedules.</div></div><button class="btn primary" onclick="appointmentModal()">+ Appointment</button></div><div class="card">${arows(db.appointments,true)}</div>`}function arows(a){return`<div class="tablewrap"><table class="table"><tr><th>Patient</th><th>Doctor</th><th>Date</th><th>Time</th><th>Status</th></tr>${a.map(x=>`<tr><td>${esc(x.patient)}</td><td>${esc(x.doctor)}</td><td>${x.date}</td><td>${x.time}</td><td><span class="badge ${x.status==='Waiting'?'amber':'green'}">${x.status}</span></td></tr>`).join('')}</table></div>`}
-function clinical(){return`<div class="head"><div><h1>Clinical Records</h1><div class="muted">Clinical notes and observations.</div></div><button class="btn primary" onclick="clinicalModal()">+ Clinical Note</button></div><div class="card">${db.clinical.map(x=>`<div class="row"><span><b>${esc(x.patientName)}</b><br><span class="muted">${x.type} • ${esc(x.text)}</span></span><span class="muted">${esc(x.date)}</span></div>`).join('')}</div>`}function instructions(){return`<div class="head"><div><h1>Staff Instructions</h1><div class="muted">Owner-to-doctor/nurse instructions and responses.</div></div><button class="btn primary" onclick="instructionModal()">+ New Instruction</button></div><div class="card">${irows(db.instructions,true)}</div>`}function irows(a){return`<div class="tablewrap"><table class="table"><tr><th>Patient</th><th>Recipient</th><th>Priority</th><th>Instruction</th><th>Status</th><th></th></tr>${a.map(x=>`<tr><td>${esc(x.patientName||'—')}</td><td>${esc(x.to)}</td><td><span class="badge ${x.priority==='Urgent'?'red':x.priority==='Important'?'amber':'blue'}">${x.priority}</span></td><td>${esc(x.text)}</td><td><span class="badge ${x.status==='Completed'?'green':'amber'}">${x.status}</span></td><td><button class="btn small" onclick="ack('${x.id}')">${x.status==='Pending'?'Acknowledge':x.status==='Acknowledged'?'Complete':'Done'}</button></td></tr>`).join('')}</table></div>`}function ack(id){let x=db.instructions.find(i=>i.id===id);if(x.status==='Pending')x.status='Acknowledged';else if(x.status==='Acknowledged')x.status='Completed';db.audit.unshift({action:'Instruction '+x.status,user:db.user.name,time:new Date().toLocaleString()});save();toast('Instruction '+x.status);render()}
-function staff(){return`<div class="head"><div><h1>Staff</h1><div class="muted">Users, roles and access.</div></div><button class="btn primary" onclick="staffModal()">+ Staff</button></div><div class="card">${db.staff.map(x=>`<div class="row"><span><b>${esc(x.name)}</b><br><span class="muted">${x.id}</span></span><span><span class="badge blue">${x.role}</span> <span class="badge green">${x.status}</span></span></div>`).join('')}</div>`}function attendance(){return`<div class="head"><div><h1>Attendance</h1><div class="muted">Daily staff presence.</div></div><button class="btn primary" onclick="clockIn()">Clock In</button></div><div class="card">${db.attendance.map(x=>`<div class="row"><span><b>${esc(x.staff)}</b><br><span class="muted">${x.date}</span></span><span>${x.in} → ${x.out||'—'} <span class="badge green">${x.status}</span></span></div>`).join('')}</div>`}function billing(){let t=db.invoices.reduce((a,x)=>a+x.total,0),p=db.invoices.reduce((a,x)=>a+x.paid,0);return`<div class="head"><div><h1>Billing</h1><div class="muted">Invoices, payments and receipts.</div></div><button class="btn primary" onclick="invoiceModal()">+ Invoice</button></div><div class="grid stats">${stat('Invoiced',money(t),'₦')}${stat('Collected',money(p),'✓')}${stat('Outstanding',money(t-p),'!')}${stat('Invoices',db.invoices.length,'▤')}</div><div class="card" style="margin-top:15px">${db.invoices.map(x=>`<div class="row"><span><b>${x.id}</b> • ${esc(x.patient)}<br><span class="muted">${x.date}</span></span><span>${money(x.total)} / ${money(x.paid)} <span class="badge ${x.status==='Paid'?'green':'amber'}">${x.status}</span></span></div>`).join('')}</div>`}function reports(){return`<div class="head"><div><h1>Reports</h1><div class="muted">Hospital operational summary.</div></div></div><div class="grid three"><div class="card"><div class="muted">Patients</div><div class="num">${db.patients.length}</div></div><div class="card"><div class="muted">Clinical entries</div><div class="num">${db.clinical.length}</div></div><div class="card"><div class="muted">Payments</div><div class="num">${money(db.invoices.reduce((a,x)=>a+x.paid,0))}</div></div></div><div class="card" style="margin-top:15px"><button class="btn" onclick="exportData()">Export JSON Backup</button></div>`}function notifications(){return`<div class="head"><div><h1>Notifications</h1><div class="muted">Activity requiring attention.</div></div><button class="btn" onclick="db.notifications.forEach(x=>x.read=true);save();render()">Mark all read</button></div><div class="card">${db.notifications.map(x=>`<div class="row"><span><b>${x.read?'':'● '}${esc(x.text)}</b><br><span class="muted">${x.time}</span></span></div>`).join('')}</div>`}
-function settings(){return`<div class="head"><div><h1>Settings</h1><div class="muted">Hospital profile and optional modules.</div></div><button class="btn primary" onclick="saveSettings()">Save Settings</button></div><div class="grid two"><div class="card"><h3>Hospital Profile</h3><div class="form"><div class="field full"><label>Name</label><input class="input" id="hn" value="${esc(db.hospital.name)}"></div><div class="field"><label>Phone</label><input class="input" id="hp" value="${esc(db.hospital.phone)}"></div><div class="field"><label>Email</label><input class="input" id="he" value="${esc(db.hospital.email)}"></div><div class="field full"><label>Address</label><input class="input" id="ha" value="${esc(db.hospital.address)}"></div></div></div><div class="card"><h3>Modules</h3>${Object.entries(db.modules).map(([k,v])=>`<label class="switch"><input type="checkbox" id="m_${k}" ${v?'checked':''}> ${k[0].toUpperCase()+k.slice(1)}</label>`).join('')}</div></div>`}function saveSettings(){db.hospital.name=document.getElementById('hn').value;db.hospital.phone=document.getElementById('hp').value;db.hospital.email=document.getElementById('he').value;db.hospital.address=document.getElementById('ha').value;Object.keys(db.modules).forEach(k=>db.modules[k]=document.getElementById('m_'+k).checked);db.audit.unshift({action:'Settings updated',user:db.user.name,time:new Date().toLocaleString()});save();toast('Settings saved');render()}
-function license(){return`<div class="head"><div><h1>License</h1><div class="muted">Trial and activation status.</div></div></div><div class="grid two"><div class="card"><h3>Current License</h3><div class="row"><span>Status</span><span class="badge amber">${db.license.status}</span></div><div class="row"><span>Plan</span><b>${db.license.plan}</b></div><div class="row"><span>Hospital ID</span><b>${db.hospital.id}</b></div><div class="row"><span>License ID</span><b>${db.hospital.license}</b></div><div class="row"><span>Expiry</span><b>${db.hospital.expiry}</b></div></div><div class="card"><h3>Activation</h3><p class="muted">Client interface only. Production activation must be signed by the vendor License Manager and verified securely.</p><button class="btn primary" onclick="activationModal()">Enter Activation Key</button></div></div>`}function optional(n){return`<div class="head"><div><h1>${n}</h1><div class="muted">Optional module.</div></div></div><div class="card"><div class="empty">${n} is switchable in Settings. This standalone build provides the module foundation; connect the secure backend workflow before real clinical use.</div></div>`}
-function login(){let roles=['Owner','Doctor','Nurse','Reception','Accounts','Laboratory','Pharmacy'];document.getElementById('app').innerHTML=`<div class="login"><div class="loginbox"><div class="loginlogo">MEDICORE</div><div class="muted">Smarter Management. Better Healthcare.</div><h2>Sign in</h2><div class="field"><label>Demo role</label><select class="select" id="role">${roles.map(r=>`<option>${r}</option>`).join('')}</select></div><button class="btn primary" style="width:100%;margin-top:12px" onclick="loginAs()">Sign in</button><div class="notice"><b>Prototype mode.</b><br>Use the demo roles to test department isolation. The migration center is owner-only. Do not enter real patient information until the secure production backend is connected.</div></div></div>`}function loginAs(){let r=document.getElementById('role').value,n={Owner:'Dr. Hospital Owner',Doctor:'Dr. Ada Bello',Nurse:'Nurse Grace James',Reception:'Mary Reception',Accounts:'John Accounts',Laboratory:'Lab Staff',Pharmacy:'Pharmacy Staff'};db.user={name:n[r],role:r};save();render()}function logout(){db.user=null;save();render()}
-function modal(title,body){document.getElementById('modalbox').innerHTML=`<div class="modalhead"><h2>${title}</h2><button class="close" onclick="closeModal()">×</button></div>${body}`;document.getElementById('modal').classList.add('open')}function closeModal(){document.getElementById('modal').classList.remove('open')}
-function patientModal(){modal('Register Patient',`<div class="form"><div class="field"><label>First name</label><input class="input" id="pf"></div><div class="field"><label>Surname</label><input class="input" id="pl"></div><div class="field"><label>Gender</label><select class="select" id="pg"><option>Male</option><option>Female</option><option>Other</option></select></div><div class="field"><label>Date of birth</label><input class="input" type="date" id="pd"></div><div class="field"><label>Phone</label><input class="input" id="pp"></div><div class="field"><label>Blood group</label><input class="input" id="pb"></div><div class="field"><label>Genotype</label><input class="input" id="pgx"></div><div class="field full"><label>Address</label><input class="input" id="pa"></div></div><div class="actions" style="margin-top:16px"><button class="btn" onclick="closeModal()">Cancel</button><button class="btn primary" onclick="createPatient()">Register</button></div>`)}function createPatient(){let name=(document.getElementById('pf').value+' '+document.getElementById('pl').value).trim();if(!name)return toast('Enter patient name');let p={id:'P-'+(1001+db.patients.length),name,gender:document.getElementById('pg').value,dob:document.getElementById('pd').value,phone:document.getElementById('pp').value,address:document.getElementById('pa').value,status:'Active',blood:document.getElementById('pb').value,genotype:document.getElementById('pgx').value,created:today()};db.patients.push(p);db.notifications.unshift({text:'New patient registered: '+name,time:'Just now',read:false});db.audit.unshift({action:'Patient registered',user:db.user.name,time:new Date().toLocaleString()});db.sync.pending++;save();closeModal();toast('Patient registered');render()}
-function clinicalModal(patient=''){let o=db.patients.map(p=>`<option value="${p.id}" ${p.id===patient?'selected':''}>${esc(p.name)}</option>`).join('');modal('Clinical Note',`<div class="form"><div class="field full"><label>Patient</label><select class="select" id="cp">${o}</select></div><div class="field full"><label>Clinical note</label><textarea class="area" id="cx"></textarea></div></div><div class="actions" style="margin-top:16px"><button class="btn" onclick="closeModal()">Cancel</button><button class="btn primary" onclick="createClinical()">Save</button></div>`)}function createClinical(){let p=db.patients.find(x=>x.id===document.getElementById('cp').value),t=document.getElementById('cx').value.trim();if(!t)return toast('Enter clinical note');db.clinical.unshift({id:'C-'+Date.now(),patient:p.id,patientName:p.name,type:'Clinical Note',text:t,author:db.user.name,date:new Date().toLocaleString()});db.audit.unshift({action:'Clinical note added',user:db.user.name,time:new Date().toLocaleString()});db.sync.pending++;save();closeModal();toast('Clinical note saved');render()}
-function vitalsModal(patient=''){let o=db.patients.map(p=>`<option value="${p.id}" ${p.id===patient?'selected':''}>${esc(p.name)}</option>`).join('');modal('Record Vital Signs',`<div class="form"><div class="field full"><label>Patient</label><select class="select" id="vp">${o}</select></div><div class="field"><label>Blood pressure</label><input class="input" id="vb" placeholder="120/80"></div><div class="field"><label>Pulse</label><input class="input" id="vu" placeholder="72"></div><div class="field"><label>Temperature</label><input class="input" id="vt" placeholder="36.7°C"></div><div class="field"><label>SpO₂</label><input class="input" id="vo" placeholder="98%"></div></div><div class="actions" style="margin-top:16px"><button class="btn" onclick="closeModal()">Cancel</button><button class="btn primary" onclick="createVitals()">Save</button></div>`)}function createVitals(){let p=db.patients.find(x=>x.id===document.getElementById('vp').value),t=`BP ${document.getElementById('vb').value||'—'} • Pulse ${document.getElementById('vu').value||'—'} • Temp ${document.getElementById('vt').value||'—'} • SpO₂ ${document.getElementById('vo').value||'—'}`;db.clinical.unshift({id:'C-'+Date.now(),patient:p.id,patientName:p.name,type:'Vital Signs',text:t,author:db.user.name,date:new Date().toLocaleString()});db.sync.pending++;save();closeModal();toast('Vitals saved');render()}
-function instructionModal(patient=''){let p=db.patients.map(x=>`<option value="${x.id}" ${x.id===patient?'selected':''}>${esc(x.name)}</option>`).join(''),s=db.staff.filter(x=>x.role==='Doctor'||x.role==='Nurse').map(x=>`<option>${esc(x.name)}</option>`).join('');modal('New Staff Instruction',`<div class="form"><div class="field"><label>Patient</label><select class="select" id="ip"><option value="">No patient</option>${p}</select></div><div class="field"><label>Recipient</label><select class="select" id="ir">${s}</select></div><div class="field"><label>Priority</label><select class="select" id="ix"><option>Normal</option><option>Important</option><option>Urgent</option></select></div><div class="field full"><label>Instruction</label><textarea class="area" id="it"></textarea></div></div><div class="actions" style="margin-top:16px"><button class="btn" onclick="closeModal()">Cancel</button><button class="btn primary" onclick="createInstruction()">Send</button></div>`)}function createInstruction(){let id=document.getElementById('ip').value,p=db.patients.find(x=>x.id===id),t=document.getElementById('it').value.trim();if(!t)return toast('Enter instruction');let x={id:'I-'+Date.now(),patient:id,patientName:p?.name||'',to:document.getElementById('ir').value,priority:document.getElementById('ix').value,text:t,status:'Pending',created:new Date().toLocaleString()};db.instructions.unshift(x);db.notifications.unshift({text:'New '+x.priority.toLowerCase()+' instruction for '+x.to,time:'Just now',read:false});db.audit.unshift({action:'Owner instruction created',user:db.user.name,time:new Date().toLocaleString()});db.sync.pending++;save();closeModal();toast('Instruction sent');render()}
-function appointmentModal(){let p=db.patients.map(x=>`<option>${esc(x.name)}</option>`).join(''),d=db.staff.filter(x=>x.role==='Doctor').map(x=>`<option>${esc(x.name)}</option>`).join('');modal('New Appointment',`<div class="form"><div class="field"><label>Patient</label><select class="select" id="ap">${p}</select></div><div class="field"><label>Doctor</label><select class="select" id="ad">${d}</select></div><div class="field"><label>Date</label><input class="input" id="at" type="date" value="${today()}"></div><div class="field"><label>Time</label><input class="input" id="am" type="time" value="09:00"></div></div><div class="actions" style="margin-top:16px"><button class="btn" onclick="closeModal()">Cancel</button><button class="btn primary" onclick="createAppointment()">Save</button></div>`)}function createAppointment(){db.appointments.unshift({patient:document.getElementById('ap').value,doctor:document.getElementById('ad').value,date:document.getElementById('at').value,time:document.getElementById('am').value,status:'Confirmed'});save();closeModal();toast('Appointment created');render()}
-function staffModal(){modal('Add Staff',`<div class="form"><div class="field"><label>Name</label><input class="input" id="sn"></div><div class="field"><label>Role</label><select class="select" id="sr"><option>Doctor</option><option>Nurse</option><option>Reception</option><option>Accounts</option><option>Laboratory</option><option>Pharmacy</option></select></div></div><div class="actions" style="margin-top:16px"><button class="btn" onclick="closeModal()">Cancel</button><button class="btn primary" onclick="createStaff()">Add</button></div>`)}function createStaff(){let n=document.getElementById('sn').value.trim();if(!n)return toast('Enter staff name');db.staff.push({id:'S-'+Date.now(),name:n,role:document.getElementById('sr').value,status:'Active'});save();closeModal();toast('Staff added');render()}function clockIn(){db.attendance.unshift({staff:db.user.name,date:today(),in:new Date().toLocaleTimeString([], {hour:'2-digit',minute:'2-digit'}),out:'',status:'Present'});save();toast('Clocked in');render()}
-function invoiceModal(){let p=db.patients.map(x=>`<option>${esc(x.name)}</option>`).join('');modal('Create Invoice',`<div class="form"><div class="field full"><label>Patient</label><select class="select" id="bi">${p}</select></div><div class="field"><label>Total (NGN)</label><input class="input" id="bt" type="number"></div><div class="field"><label>Paid (NGN)</label><input class="input" id="bp" type="number" value="0"></div></div><div class="actions" style="margin-top:16px"><button class="btn" onclick="closeModal()">Cancel</button><button class="btn primary" onclick="createInvoice()">Create</button></div>`)}function createInvoice(){let t=+document.getElementById('bt').value,p=+document.getElementById('bp').value||0,n=document.getElementById('bi').value;if(!t)return toast('Enter amount');db.invoices.unshift({id:'INV-'+Date.now(),patient:n,total:t,paid:p,date:today(),status:p>=t?'Paid':p?'Part Paid':'Unpaid'});save();closeModal();toast('Invoice created');render()}
-function activationModal(){modal('Enter Activation Key',`<p class="muted">Demo interface only. Production keys must be signed by the vendor License Manager.</p><input class="input" id="lk" placeholder="MEDICORE-XXXX-XXXX-XXXX"><div class="actions" style="margin-top:15px"><button class="btn primary" onclick="activate()">Activate Demo</button></div>`)}function activate(){let k=document.getElementById('lk').value.trim();if(!k)return toast('Enter a key');db.license={status:'ACTIVE',plan:'Professional',start:today()};db.hospital.license=k;save();closeModal();toast('Demo license activated');render()}
-function exportData(){let b=new Blob([JSON.stringify(db,null,2)],{type:'application/json'}),a=document.createElement('a');a.href=URL.createObjectURL(b);a.download='medicore-backup-'+today()+'.json';a.click();URL.revokeObjectURL(a.href)}document.getElementById('modal').onclick=e=>{if(e.target.id==='modal')closeModal()};window.addEventListener('offline',()=>{db.sync.status='OFFLINE';save();render();toast('Offline mode — local changes continue')});window.addEventListener('online',()=>{db.sync.status='SYNCING';render();setTimeout(()=>{db.sync.status='ONLINE';db.sync.last=new Date().toLocaleString();db.sync.pending=0;save();render();toast('Connection restored')},1000)});render();
-</script></body></html>
+<style>
+*{box-sizing:border-box}
+:root{
+  --primary:#0f766e;
+  --primary-dark:#115e59;
+  --secondary:#2563eb;
+  --success:#15803d;
+  --warning:#b45309;
+  --danger:#b91c1c;
+  --bg:#f1f5f9;
+  --card:#fff;
+  --text:#0f172a;
+  --muted:#64748b;
+  --border:#e2e8f0;
+  --sidebar:#0f172a;
+}
+body{
+  margin:0;
+  font-family:Arial,Helvetica,sans-serif;
+  background:var(--bg);
+  color:var(--text);
+}
+button,input,select,textarea{font:inherit}
+button{cursor:pointer}
+.hidden{display:none!important}
+
+.login-screen{
+  min-height:100vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:20px;
+  background:linear-gradient(135deg,#0f766e,#164e63);
+}
+.login-card{
+  width:100%;
+  max-width:430px;
+  background:#fff;
+  border-radius:18px;
+  padding:32px;
+  box-shadow:0 20px 60px rgba(0,0,0,.2);
+}
+.logo{
+  width:65px;
+  height:65px;
+  border-radius:16px;
+  background:var(--primary);
+  color:#fff;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:28px;
+  font-weight:bold;
+  margin:0 auto 15px;
+}
+.login-card h1{text-align:center;margin:0}
+.login-card .sub{text-align:center;color:var(--muted);margin:8px 0 25px}
+.form-group{margin-bottom:15px}
+label{
+  display:block;
+  font-size:13px;
+  font-weight:bold;
+  margin-bottom:6px;
+}
+input,select,textarea{
+  width:100%;
+  border:1px solid var(--border);
+  border-radius:9px;
+  padding:10px 12px;
+  background:#fff;
+  color:var(--text);
+}
+textarea{min-height:90px;resize:vertical}
+.btn{
+  border:0;
+  border-radius:9px;
+  padding:10px 15px;
+  font-weight:bold;
+}
+.btn-primary{background:var(--primary);color:#fff}
+.btn-secondary{background:#e2e8f0;color:#0f172a}
+.btn-success{background:var(--success);color:#fff}
+.btn-danger{background:var(--danger);color:#fff}
+.btn-warning{background:var(--warning);color:#fff}
+.btn-block{width:100%}
+.small{font-size:12px}
+.muted{color:var(--muted)}
+
+.app{
+  min-height:100vh;
+  display:grid;
+  grid-template-columns:245px 1fr;
+}
+.sidebar{
+  background:var(--sidebar);
+  color:#fff;
+  padding:18px 12px;
+  position:sticky;
+  top:0;
+  height:100vh;
+  overflow:auto;
+}
+.brand{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  padding:8px 10px 22px;
+}
+.brand-icon{
+  width:40px;
+  height:40px;
+  border-radius:10px;
+  background:var(--primary);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-weight:bold;
+}
+.brand strong{font-size:18px}
+.nav-title{
+  color:#94a3b8;
+  font-size:10px;
+  font-weight:bold;
+  margin:18px 10px 6px;
+  text-transform:uppercase;
+}
+.nav-btn{
+  width:100%;
+  border:0;
+  background:transparent;
+  color:#cbd5e1;
+  text-align:left;
+  padding:10px 12px;
+  border-radius:8px;
+  margin:2px 0;
+}
+.nav-btn:hover,.nav-btn.active{
+  background:#1e293b;
+  color:#fff;
+}
+.main{
+  min-width:0;
+}
+.topbar{
+  background:#fff;
+  border-bottom:1px solid var(--border);
+  min-height:65px;
+  padding:12px 20px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:15px;
+  position:sticky;
+  top:0;
+  z-index:10;
+}
+.top-left h2{margin:0;font-size:20px}
+.top-left .small{margin-top:3px}
+.user-area{
+  display:flex;
+  align-items:center;
+  gap:12px;
+}
+.status{
+  padding:7px 10px;
+  border-radius:20px;
+  font-size:12px;
+  font-weight:bold;
+}
+.status.online{background:#dcfce7;color:#166534}
+.status.offline{background:#ffedd5;color:#9a3412}
+.status.syncing{background:#dbeafe;color:#1d4ed8}
+.user-pill{
+  background:#f1f5f9;
+  padding:8px 12px;
+  border-radius:20px;
+  font-size:12px;
+}
+.content{
+  padding:20px;
+  max-width:1600px;
+  margin:auto;
+}
+.page{display:none}
+.page.active{display:block}
+
+.stats{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:15px;
+  margin-bottom:20px;
+}
+.stat-card{
+  background:#fff;
+  border:1px solid var(--border);
+  border-radius:13px;
+  padding:18px;
+}
+.stat-card .label{
+  color:var(--muted);
+  font-size:12px;
+}
+.stat-card .value{
+  font-size:26px;
+  font-weight:bold;
+  margin-top:6px;
+}
+.stat-card .detail{
+  font-size:11px;
+  color:var(--muted);
+  margin-top:5px;
+}
+
+.grid{
+  display:grid;
+  gap:15px;
+}
+.two{grid-template-columns:repeat(2,1fr)}
+.three{grid-template-columns:repeat(3,1fr)}
+.four{grid-template-columns:repeat(4,1fr)}
+
+.card{
+  background:#fff;
+  border:1px solid var(--border);
+  border-radius:13px;
+  padding:18px;
+  margin-bottom:15px;
+}
+.card h3,.card h4{margin-top:0}
+.card-header{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:10px;
+  margin-bottom:14px;
+}
+.card-header h3{margin:0}
+
+.table-wrap{overflow:auto}
+table{
+  width:100%;
+  border-collapse:collapse;
+  font-size:13px;
+}
+th,td{
+  border-bottom:1px solid var(--border);
+  padding:10px 8px;
+  text-align:left;
+  white-space:nowrap;
+}
+th{
+  background:#f8fafc;
+  font-size:11px;
+  color:#475569;
+}
+.badge{
+  display:inline-block;
+  padding:4px 8px;
+  border-radius:20px;
+  font-size:10px;
+  font-weight:bold;
+}
+.badge-green{background:#dcfce7;color:#166534}
+.badge-blue{background:#dbeafe;color:#1d4ed8}
+.badge-orange{background:#ffedd5;color:#9a3412}
+.badge-red{background:#fee2e2;color:#991b1b}
+.badge-gray{background:#e2e8f0;color:#475569}
+
+.alert{
+  border-radius:10px;
+  padding:12px;
+  margin-bottom:10px;
+  font-size:13px;
+}
+.alert-info{background:#eff6ff;color:#1e40af}
+.alert-warning{background:#fffbeb;color:#92400e}
+.alert-danger{background:#fef2f2;color:#991b1b}
+.alert-success{background:#f0fdf4;color:#166534}
+
+.section-title{
+  margin:0 0 15px;
+  font-size:18px;
+}
+.toolbar{
+  display:flex;
+  flex-wrap:wrap;
+  gap:8px;
+  margin-bottom:15px;
+}
+.toolbar>*{width:auto}
+
+.modal{
+  position:fixed;
+  inset:0;
+  background:rgba(15,23,42,.55);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:20px;
+  z-index:100;
+}
+.modal-card{
+  background:#fff;
+  border-radius:15px;
+  width:100%;
+  max-width:700px;
+  max-height:90vh;
+  overflow:auto;
+  padding:22px;
+}
+.modal-header{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  margin-bottom:15px;
+}
+.close{
+  border:0;
+  background:#f1f5f9;
+  border-radius:8px;
+  width:32px;
+  height:32px;
+}
+
+.kpi{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:15px;
+  padding:12px 0;
+  border-bottom:1px solid var(--border);
+}
+.kpi:last-child{border-bottom:0}
+.dot{
+  width:10px;
+  height:10px;
+  border-radius:50%;
+  display:inline-block;
+  margin-right:6px;
+}
+.dot.green{background:#16a34a}
+.dot.orange{background:#f59e0b}
+.dot.red{background:#dc2626}
+.dot.blue{background:#2563eb}
+
+.empty{
+  text-align:center;
+  padding:25px;
+  color:var(--muted);
+}
+
+.progress{
+  height:9px;
+  background:#e2e8f0;
+  border-radius:10px;
+  overflow:hidden;
+}
+.progress-bar{
+  height:100%;
+  background:var(--primary);
+}
+
+.login-demo{
+  margin-top:15px;
+  padding:10px;
+  border-radius:8px;
+  background:#f8fafc;
+  color:#475569;
+}
+
+.migration-step{
+  border:1px solid var(--border);
+  border-radius:12px;
+  padding:15px;
+}
+.step-number{
+  width:30px;
+  height:30px;
+  background:var(--primary);
+  color:#fff;
+  border-radius:50%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-weight:bold;
+  margin-bottom:10px;
+}
+
+.footer-note{
+  text-align:center;
+  color:var(--muted);
+  font-size:11px;
+  padding:25px;
+}
+
+@media(max-width:1100px){
+  .stats{grid-template-columns:repeat(2,1fr)}
+  .four{grid-template-columns:repeat(2,1fr)}
+  .three{grid-template-columns:1fr 1fr}
+}
+
+@media(max-width:800px){
+  .app{grid-template-columns:1fr}
+  .sidebar{
+    position:fixed;
+    left:-260px;
+    width:245px;
+    z-index:50;
+    transition:.2s;
+  }
+  .sidebar.open{left:0}
+  .topbar{padding:10px 12px}
+  .content{padding:12px}
+  .two,.three,.four{grid-template-columns:1fr}
+  .stats{grid-template-columns:1fr 1fr}
+  .mobile-menu{display:block!important}
+}
+
+.mobile-menu{
+  display:none;
+  border:0;
+  background:#f1f5f9;
+  border-radius:8px;
+  padding:8px 10px;
+}
+
+@media(max-width:500px){
+  .stats{grid-template-columns:1fr}
+  .user-pill{display:none}
+}
+</style>
+</head>
+
+<body>
+
+<div id="loginScreen" class="login-screen">
+  <div class="login-card">
+    <div class="logo">M</div>
+    <h1>MediCore</h1>
+    <div class="sub">Hospital Management System</div>
+
+    <div class="form-group">
+      <label>Username</label>
+      <input id="loginUsername" value="owner" autocomplete="username">
+    </div>
+
+    <div class="form-group">
+      <label>Password</label>
+      <input id="loginPassword" type="password" value="demo" autocomplete="current-password">
+    </div>
+
+    <button class="btn btn-primary btn-block" onclick="login()">Sign In</button>
+
+    <div id="loginError" class="alert alert-danger hidden" style="margin-top:12px"></div>
+
+    <div class="login-demo">
+      <strong>Demo access</strong><br>
+      Username: owner<br>
+      Password: demo
+    </div>
+  </div>
+</div>
+
+<div id="app" class="app hidden">
+
+  <aside id="sidebar" class="sidebar">
+    <div class="brand">
+      <div class="brand-icon">M</div>
+      <div>
+        <strong>MediCore</strong>
+        <div class="small" style="color:#94a3b8">Hospital System</div>
+      </div>
+    </div>
+
+    <div class="nav-title">Main</div>
+
+    <button class="nav-btn active" data-page="dashboard" onclick="go('dashboard')">🏥 Command Center</button>
+    <button class="nav-btn" data-page="patients" onclick="go('patients')">👤 Patients</button>
+    <button class="nav-btn" data-page="appointments" onclick="go('appointments')">📅 Appointments</button>
+    <button class="nav-btn" data-page="clinical" onclick="go('clinical')">🩺 Clinical</button>
+    <button class="nav-btn" data-page="instructions" onclick="go('instructions')">📋 Instructions</button>
+
+    <div class="nav-title">Hospital Operations</div>
+
+    <button class="nav-btn" data-page="staff" onclick="go('staff')">👥 Staff</button>
+    <button class="nav-btn" data-page="attendance" onclick="go('attendance')">🕘 Attendance</button>
+    <button class="nav-btn" data-page="billing" onclick="go('billing')">💳 Billing</button>
+    <button class="nav-btn" data-page="reports" onclick="go('reports')">📊 Reports</button>
+
+    <div class="nav-title">Departments</div>
+
+    <button class="nav-btn" data-page="laboratory" onclick="go('laboratory')">🧪 Laboratory</button>
+    <button class="nav-btn" data-page="pharmacy" onclick="go('pharmacy')">💊 Pharmacy</button>
+
+    <div class="nav-title">Administration</div>
+
+    <button class="nav-btn" data-page="migration" onclick="go('migration')">🔄 EMR Migration</button>
+    <button class="nav-btn" data-page="notifications" onclick="go('notifications')">🔔 Notifications</button>
+    <button class="nav-btn" data-page="settings" onclick="go('settings')">⚙️ Settings</button>
+    <button class="nav-btn" data-page="license" onclick="go('license')">🔑 License</button>
+
+    <div style="margin-top:20px">
+      <button class="nav-btn" onclick="logout()">🚪 Sign Out</button>
+    </div>
+  </aside>
+
+  <main class="main">
+
+    <header class="topbar">
+      <div class="user-area">
+        <button class="mobile-menu" onclick="toggleSidebar()">☰</button>
+        <div class="top-left">
+          <h2 id="pageTitle">Hospital Command Center</h2>
+          <div class="small muted" id="hospitalNameTop">MediCore Hospital</div>
+        </div>
+      </div>
+
+      <div class="user-area">
+        <span id="networkStatus" class="status online">🟢 ONLINE</span>
+        <span id="syncStatus" class="status online">Synced</span>
+        <span id="userPill" class="user-pill">Owner</span>
+      </div>
+    </header>
+
+    <div class="content">
+
+      <!-- DASHBOARD -->
+      <section id="page-dashboard" class="page active">
+
+        <div class="alert alert-info">
+          <strong>Welcome to MediCore.</strong>
+          The Owner Command Center provides the overall hospital picture and today's live operational view.
+        </div>
+
+        <div class="stats">
+          <div class="stat-card">
+            <div class="label">TOTAL PATIENTS</div>
+            <div class="value" id="statPatients">0</div>
+            <div class="detail">Registered patients</div>
+          </div>
+
+          <div class="stat-card">
+            <div class="label">TODAY'S APPOINTMENTS</div>
+            <div class="value" id="statAppointments">0</div>
+            <div class="detail">Scheduled today</div>
+          </div>
+
+          <div class="stat-card">
+            <div class="label">COLLECTED</div>
+            <div class="value" id="statCollected">₦0</div>
+            <div class="detail">Recorded payments</div>
+          </div>
+
+          <div class="stat-card">
+            <div class="label">OUTSTANDING</div>
+            <div class="value" id="statOutstanding">₦0</div>
+            <div class="detail">Outstanding balance</div>
+          </div>
+        </div>
+
+        <div class="stats">
+          <div class="stat-card">
+            <div class="label">ACTIVE STAFF</div>
+            <div class="value" id="statStaff">0</div>
+            <div class="detail">Current staff</div>
+          </div>
+
+          <div class="stat-card">
+            <div class="label">LAB ORDERS</div>
+            <div class="value" id="statLab">0</div>
+            <div class="detail">Laboratory activity</div>
+          </div>
+
+          <div class="stat-card">
+            <div class="label">PHARMACY ITEMS</div>
+            <div class="value" id="statPharmacy">0</div>
+            <div class="detail">Medication records</div>
+          </div>
+
+          <div class="stat-card">
+            <div class="label">PENDING SYNC</div>
+            <div class="value" id="statPendingSync">0</div>
+            <div class="detail">Local changes</div>
+          </div>
+        </div>
+
+        <div class="grid two">
+
+          <div class="card">
+            <div class="card-header">
+              <h3>🏥 Today at the Hospital</h3>
+              <span class="badge badge-green">LIVE VIEW</span>
+            </div>
+
+            <div class="kpi">
+              <span>Patients registered today</span>
+              <strong id="todayPatients">0</strong>
+            </div>
+
+            <div class="kpi">
+              <span>Appointments today</span>
+              <strong id="todayAppts">0</strong>
+            </div>
+
+            <div class="kpi">
+              <span>Patients currently waiting</span>
+              <strong id="todayWaiting">0</strong>
+            </div>
+
+            <div class="kpi">
+              <span>Completed consultations</span>
+              <strong id="todayConsultations">0</strong>
+            </div>
+
+            <div class="kpi">
+              <span>Laboratory orders today</span>
+              <strong id="todayLabs">0</strong>
+            </div>
+
+            <div class="kpi">
+              <span>Prescriptions today</span>
+              <strong id="todayPrescriptions">0</strong>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card-header">
+              <h3>🔄 Data Protection & Sync</h3>
+            </div>
+
+            <div id="syncPanel">
+              <div class="kpi">
+                <span>Network</span>
+                <strong id="syncNetwork">Online</strong>
+              </div>
+
+              <div class="kpi">
+                <span>Local database</span>
+                <strong id="dbStatus">Checking...</strong>
+              </div>
+
+              <div class="kpi">
+                <span>Pending changes</span>
+                <strong id="pendingChanges">0</strong>
+              </div>
+
+              <div class="kpi">
+                <span>Last synchronization</span>
+                <strong id="lastSync">Not synchronized</strong>
+              </div>
+            </div>
+
+            <div class="alert alert-warning" style="margin-top:12px">
+              Offline mode stores operational changes locally. A central server synchronization layer will be connected in the next architecture stage.
+            </div>
+          </div>
+
+        </div>
+
+        <div class="grid two">
+
+          <div class="card">
+            <div class="card-header">
+              <h3>📅 Today's Appointments</h3>
+              <button class="btn btn-secondary" onclick="go('appointments')">View All</button>
+            </div>
+            <div id="dashboardAppointments"></div>
+          </div>
+
+          <div class="card">
+            <div class="card-header">
+              <h3>⚠️ Attention Required</h3>
+            </div>
+            <div id="dashboardAlerts"></div>
+          </div>
+
+        </div>
+
+        <div class="card">
+          <div class="card-header">
+            <h3>🧑‍⚕️ Recent Patients</h3>
+            <button class="btn btn-primary" onclick="openPatientModal()">+ Register Patient</button>
+          </div>
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>MRN</th>
+                  <th>Patient</th>
+                  <th>Gender</th>
+                  <th>Phone</th>
+                  <th>Registration</th>
+                </tr>
+              </thead>
+              <tbody id="recentPatients"></tbody>
+            </table>
+          </div>
+        </div>
+
+      </section>
+
+      <!-- PATIENTS -->
+      <section id="page-patients" class="page">
+        <h2 class="section-title">Patients</h2>
+
+        <div class="toolbar">
+          <button class="btn btn-primary" onclick="openPatientModal()">+ Register Patient</button>
+          <input id="patientSearch" placeholder="Search patient..." oninput="renderPatients()" style="max-width:300px">
+        </div>
+
+        <div class="card">
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>MRN</th>
+                  <th>Name</th>
+                  <th>Gender</th>
+                  <th>DOB</th>
+                  <th>Phone</th>
+                  <th>Registered</th>
+                  <th>Action</th>
+                </tr>
+              </thead>
+              <tbody id="patientsTable"></tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <!-- APPOINTMENTS -->
+      <section id="page-appointments" class="page">
+        <h2 class="section-title">Appointments</h2>
+
+        <div class="toolbar">
+          <button class="btn btn-primary" onclick="openAppointmentModal()">+ New Appointment</button>
+        </div>
+
+        <div class="card">
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>Date</th>
+                  <th>Time</th>
+                  <th>Patient</th>
+                  <th>Doctor</th>
+                  <th>Department</th>
+                  <th>Status</th>
+                </tr>
+              </thead>
+              <tbody id="appointmentsTable"></tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <!-- CLINICAL -->
+      <section id="page-clinical" class="page">
+        <h2 class="section-title">Clinical Records</h2>
+
+        <div class="toolbar">
+          <button class="btn btn-primary" onclick="openClinicalModal()">+ New Clinical Record</button>
+        </div>
+
+        <div class="card">
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>Date</th>
+                  <th>Patient</th>
+                  <th>Doctor</th>
+                  <th>Diagnosis</th>
+                  <th>Treatment</th>
+                  <th>Status</th>
+                </tr>
+              </thead>
+              <tbody id="clinicalTable"></tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <!-- INSTRUCTIONS -->
+      <section id="page-instructions" class="page">
+        <h2 class="section-title">Instructions</h2>
+        <div class="card">
+          <div class="toolbar">
+            <button class="btn btn-primary" onclick="openInstructionModal()">+ New Instruction</button>
+          </div>
+          <div id="instructionsList"></div>
+        </div>
+      </section>
+
+      <!-- STAFF -->
+      <section id="page-staff" class="page">
+        <h2 class="section-title">Staff Management</h2>
+
+        <div class="toolbar">
+          <button class="btn btn-primary" onclick="openStaffModal()">+ Add Staff</button>
+        </div>
+
+        <div class="card">
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>Name</th>
+                  <th>Role</th>
+                  <th>Department</th>
+                  <th>Status</th>
+                  <th>Last Activity</th>
+                </tr>
+              </thead>
+              <tbody id="staffTable"></tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <!-- ATTENDANCE -->
+      <section id="page-attendance" class="page">
+        <h2 class="section-title">Attendance</h2>
+
+        <div class="card">
+          <div class="toolbar">
+            <button class="btn btn-success" onclick="markAttendance('IN')">Clock In</button>
+            <button class="btn btn-secondary" onclick="markAttendance('OUT')">Clock Out</button>
+          </div>
+
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>Staff</th>
+                  <th>Date</th>
+                  <th>Time In</th>
+                  <th>Time Out</th>
+                  <th>Status</th>
+                </tr>
+              </thead>
+              <tbody id="attendanceTable"></tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <!-- BILLING -->
+      <section id="page-billing" class="page">
+        <h2 class="section-title">Billing & Payments</h2>
+
+        <div class="stats">
+          <div class="stat-card">
+            <div class="label">TOTAL BILLED</div>
+            <div class="value" id="billingTotal">₦0</div>
+          </div>
+          <div class="stat-card">
+            <div class="label">COLLECTED</div>
+            <div class="value" id="billingCollected">₦0</div>
+          </div>
+          <div class="stat-card">
+            <div class="label">OUTSTANDING</div>
+            <div class="value" id="billingOutstanding">₦0</div>
+          </div>
+          <div class="stat-card">
+            <div class="label">INVOICES</div>
+            <div class="value" id="billingInvoices">0</div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="toolbar">
+            <button class="btn btn-primary" onclick="openInvoiceModal()">+ New Invoice</button>
+          </div>
+
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>Invoice</th>
+                  <th>Patient</th>
+                  <th>Amount</th>
+                  <th>Paid</th>
+                  <th>Balance</th>
+                  <th>Status</th>
+                </tr>
+              </thead>
+              <tbody id="billingTable"></tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <!-- REPORTS -->
+      <section id="page-reports" class="page">
+        <h2 class="section-title">Reports</h2>
+
+        <div class="grid three">
+          <div class="card">
+            <h3>Patients</h3>
+            <p class="muted">Total registered patients</p>
+            <strong id="reportPatients">0</strong>
+          </div>
+
+          <div class="card">
+            <h3>Clinical</h3>
+            <p class="muted">Clinical records</p>
+            <strong id="reportClinical">0</strong>
+          </div>
+
+          <div class="card">
+            <h3>Financial</h3>
+            <p class="muted">Total collected</p>
+            <strong id="reportCollected">₦0</strong>
+          </div>
+        </div>
+
+        <div class="card">
+          <h3>Data Export</h3>
+          <p class="muted">Export MediCore prototype data for backup or migration preparation.</p>
+          <div class="toolbar">
+            <button class="btn btn-primary" onclick="exportData('json')">Export JSON</button>
+            <button class="btn btn-secondary" onclick="exportData('csv')">Export Patients CSV</button>
+          </div>
+        </div>
+      </section>
+
+      <!-- NOTIFICATIONS -->
+      <section id="page-notifications" class="page">
+        <h2 class="section-title">Notifications</h2>
+
+        <div class="card">
+          <div id="notificationsList"></div>
+        </div>
+      </section>
+
+      <!-- LABORATORY -->
+      <section id="page-laboratory" class="page">
+        <h2 class="section-title">Laboratory</h2>
+
+        <div class="toolbar">
+          <button class="btn btn-primary" onclick="openLabModal()">+ New Lab Order</button>
+        </div>
+
+        <div class="card">
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>Date</th>
+                  <th>Patient</th>
+                  <th>Test</th>
+                  <th>Result</th>
+                  <th>Status</th>
+                </tr>
+              </thead>
+              <tbody id="labTable"></tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <!-- PHARMACY -->
+      <section id="page-pharmacy" class="page">
+        <h2 class="section-title">Pharmacy</h2>
+
+        <div class="toolbar">
+          <button class="btn btn-primary" onclick="openPharmacyModal()">+ Add Medication</button>
+        </div>
+
+        <div class="card">
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>Date</th>
+                  <th>Patient</th>
+                  <th>Medication</th>
+                  <th>Quantity</th>
+                  <th>Status</th>
+                </tr>
+              </thead>
+              <tbody id="pharmacyTable"></tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <!-- MIGRATION -->
+      <section id="page-migration" class="page">
+        <h2 class="section-title">EMR Migration Center</h2>
+
+        <div class="alert alert-info">
+          <strong>Legacy EMR:</strong> AQUILLA
+          <br>
+          The actual AQUILLA export structure will be mapped after the hospital provides a sample export/backup.
+        </div>
+
+        <div class="card">
+          <div class="card-header">
+            <h3>Migration Profile</h3>
+            <span class="badge badge-blue">AQUILLA</span>
+          </div>
+
+          <div class="grid two">
+            <div class="form-group">
+              <label>Current EMR Provider</label>
+              <input id="migrationProvider" value="AQUILLA" oninput="saveMigrationProvider()">
+            </div>
+
+            <div class="form-group">
+              <label>Export Format</label>
+              <select id="migrationFormat" onchange="saveMigrationProvider()">
+                <option value="">Not yet known</option>
+                <option>CSV</option>
+                <option>Excel</option>
+                <option>JSON</option>
+                <option>XML</option>
+                <option>SQL/Database Backup</option>
+                <option>Other</option>
+              </select>
+            </div>
+          </div>
+        </div>
+
+        <div class="grid four">
+
+          <div class="migration-step">
+            <div class="step-number">1</div>
+            <h4>Export</h4>
+            <p class="muted small">Obtain the complete AQUILLA hospital data export.</p>
+          </div>
+
+          <div class="migration-step">
+            <div class="step-number">2</div>
+            <h4>Map</h4>
+            <p class="muted small">Map AQUILLA fields to MediCore fields and preserve identifiers.</p>
+          </div>
+
+          <div class="migration-step">
+            <div class="step-number">3</div>
+            <h4>Preview</h4>
+            <p class="muted small">Detect duplicates, missing information and conflicts before import.</p>
+          </div>
+
+          <div class="migration-step">
+            <div class="step-number">4</div>
+            <h4>Verify</h4>
+            <p class="muted small">Import, reconcile totals and obtain Owner approval.</p>
+          </div>
+
+        </div>
+
+        <div class="card">
+          <h3>Migration Safety Checklist</h3>
+
+          <div class="grid two">
+
+            <div>
+              <div class="kpi">
+                <span>Preserve original MRN</span>
+                <span class="badge badge-green">YES</span>
+              </div>
+
+              <div class="kpi">
+                <span>Preserve historical dates</span>
+                <span class="badge badge-green">YES</span>
+              </div>
+
+              <div class="kpi">
+                <span>Duplicate detection</span>
+                <span class="badge badge-green">ENABLED</span>
+              </div>
+
+              <div class="kpi">
+                <span>Owner approval</span>
+                <span class="badge badge-orange">REQUIRED</span>
+              </div>
+            </div>
+
+            <div>
+              <div class="alert alert-warning">
+                Keep the original AQUILLA export as a read-only source archive.
+              </div>
+
+              <div class="alert alert-warning">
+                The old EMR should remain available in read-only mode until migration reconciliation and sign-off are complete.
+              </div>
+
+              <button class="btn btn-secondary" onclick="downloadMigrationChecklist()">
+                Download Migration Checklist
+              </button>
+            </div>
+
+          </div>
+        </div>
+
+        <div class="card">
+          <h3>Migration History</h3>
+          <div id="migrationHistory"></div>
+        </div>
+
+      </section>
+
+      <!-- SETTINGS -->
+      <section id="page-settings" class="page">
+        <h2 class="section-title">Settings</h2>
+
+        <div class="card">
+          <h3>Hospital Settings</h3>
+
+          <div class="grid two">
+
+            <div class="form-group">
+              <label>Hospital Name</label>
+              <input id="hospitalName" value="MediCore Hospital">
+            </div>
+
+            <div class="form-group">
+              <label>Currency</label>
+              <select id="currency">
+                <option value="NGN">Nigerian Naira (₦)</option>
+              </select>
+            </div>
+
+          </div>
+
+          <button class="btn btn-primary" onclick="saveSettings()">Save Settings</button>
+        </div>
+
+        <div class="card">
+          <h3>Offline Database</h3>
+          <div class="kpi">
+            <span>IndexedDB</span>
+            <strong id="settingsDbStatus">Checking...</strong>
+          </div>
+          <div class="kpi">
+            <span>Pending changes</span>
+            <strong id="settingsPending">0</strong>
+          </div>
+          <div class="kpi">
+            <span>Last sync</span>
+            <strong id="settingsLastSync">Not synchronized</strong>
+          </div>
+        </div>
+      </section>
+
+      <!-- LICENSE -->
+      <section id="page-license" class="page">
+        <h2 class="section-title">MediCore License</h2>
+
+        <div class="grid two">
+
+          <div class="card">
+            <h3>License Status</h3>
+
+            <div class="kpi">
+              <span>Status</span>
+              <strong id="licenseStatus">TRIAL</strong>
+            </div>
+
+            <div class="kpi">
+              <span>Hospital</span>
+              <strong id="licenseHospital">MediCore Hospital</strong>
+            </div>
+
+            <div class="kpi">
+              <span>License Type</span>
+              <strong id="licenseType">7-Day Trial</strong>
+            </div>
+
+            <div class="kpi">
+              <span>Activation</span>
+              <strong id="licenseActivation">Not activated</strong>
+            </div>
+
+            <div class="kpi">
+              <span>Expiry</span>
+              <strong id="licenseExpiry">Not activated</strong>
+            </div>
+
+            <div class="kpi">
+              <span>Days Remaining</span>
+              <strong id="licenseDays">—</strong>
+            </div>
+          </div>
+
+          <div class="card">
+            <h3>Activate MediCore</h3>
+
+            <div class="form-group">
+              <label>Activation Key</label>
+              <input id="activationKey" placeholder="Enter MediCore activation key">
+            </div>
+
+            <button class="btn btn-primary" onclick="activateLicense()">
+              Activate MediCore
+            </button>
+
+            <div id="licenseMessage" style="margin-top:12px"></div>
+
+            <div class="alert alert-info" style="margin-top:15px">
+              The 7-day trial/license system is being prepared for the CMD license generator.
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <div class="footer-note">
+        MediCore v2 — Offline-first hospital management foundation
+      </div>
+
+    </div>
+  </main>
+</div>
+
+<!-- PATIENT MODAL -->
+<div id="patientModal" class="modal hidden">
+  <div class="modal-card">
+    <div class="modal-header">
+      <h3>Register Patient</h3>
+      <button class="close" onclick="closeModal('patientModal')">×</button>
+    </div>
+
+    <div class="grid two">
+
+      <div class="form-group">
+        <label>First Name</label>
+        <input id="patientFirstName">
+      </div>
+
+      <div class="form-group">
+        <label>Last Name</label>
+        <input id="patientLastName">
+      </div>
+
+      <div class="form-group">
+        <label>Gender</label>
+        <select id="patientGender">
+          <option value="">Select</option>
+          <option>Male</option>
+          <option>Female</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label>Date of Birth</label>
+        <input id="patientDob" type="date">
+      </div>
+
+      <div class="form-group">
+        <label>Phone</label>
+        <input id="patientPhone">
+      </div>
+
+      <div class="form-group">
+        <label>Email</label>
+        <input id="patientEmail" type="email">
+      </div>
+
+    </div>
+
+    <div class="form-group">
+      <label>Address</label>
+      <textarea id="patientAddress"></textarea>
+    </div>
+
+    <button class="btn btn-primary" onclick="savePatient()">Register Patient</button>
+  </div>
+</div>
+
+<!-- APPOINTMENT MODAL -->
+<div id="appointmentModal" class="modal hidden">
+  <div class="modal-card">
+    <div class="modal-header">
+      <h3>New Appointment</h3>
+      <button class="close" onclick="closeModal('appointmentModal')">×</button>
+    </div>
+
+    <div class="form-group">
+      <label>Patient</label>
+      <select id="appointmentPatient"></select>
+    </div>
+
+    <div class="grid two">
+
+      <div class="form-group">
+        <label>Date</label>
+        <input id="appointmentDate" type="date">
+      </div>
+
+      <div class="form-group">
+        <label>Time</label>
+        <input id="appointmentTime" type="time">
+      </div>
+
+      <div class="form-group">
+        <label>Doctor</label>
+        <input id="appointmentDoctor" placeholder="Doctor name">
+      </div>
+
+      <div class="form-group">
+        <label>Department</label>
+        <select id="appointmentDepartment">
+          <option>General Medicine</option>
+          <option>Paediatrics</option>
+          <option>Surgery</option>
+          <option>Obstetrics & Gynaecology</option>
+          <option>Laboratory</option>
+          <option>Pharmacy</option>
+          <option>Other</option>
+        </select>
+      </div>
+
+    </div>
+
+    <button class="btn btn-primary" onclick="saveAppointment()">Save Appointment</button>
+  </div>
+</div>
+
+<!-- CLINICAL MODAL -->
+<div id="clinicalModal" class="modal hidden">
+  <div class="modal-card">
+    <div class="modal-header">
+      <h3>Clinical Record</h3>
+      <button class="close" onclick="closeModal('clinicalModal')">×</button>
+    </div>
+
+    <div class="form-group">
+      <label>Patient</label>
+      <select id="clinicalPatient"></select>
+    </div>
+
+    <div class="grid two">
+
+      <div class="form-group">
+        <label>Doctor</label>
+        <input id="clinicalDoctor">
+      </div>
+
+      <div class="form-group">
+        <label>Diagnosis</label>
+        <input id="clinicalDiagnosis">
+      </div>
+
+    </div>
+
+    <div class="form-group">
+      <label>Clinical Notes</label>
+      <textarea id="clinicalNotes"></textarea>
+    </div>
+
+    <div class="form-group">
+      <label>Treatment</label>
+      <textarea id="clinicalTreatment"></textarea>
+    </div>
+
+    <button class="btn btn-primary" onclick="saveClinical()">Save Clinical Record</button>
+  </div>
+</div>
+
+<!-- INSTRUCTION MODAL -->
+<div id="instructionModal" class="modal hidden">
+  <div class="modal-card">
+    <div class="modal-header">
+      <h3>New Instruction</h3>
+      <button class="close" onclick="closeModal('instructionModal')">×</button>
+    </div>
+
+    <div class="form-group">
+      <label>To Department/Staff</label>
+      <input id="instructionTo">
+    </div>
+
+    <div class="form-group">
+      <label>Instruction</label>
+      <textarea id="instructionText"></textarea>
+    </div>
+
+    <button class="btn btn-primary" onclick="saveInstruction()">Save Instruction</button>
+  </div>
+</div>
+
+<!-- STAFF MODAL -->
+<div id="staffModal" class="modal hidden">
+  <div class="modal-card">
+    <div class="modal-header">
+      <h3>Add Staff</h3>
+      <button class="close" onclick="closeModal('staffModal')">×</button>
+    </div>
+
+    <div class="grid two">
+
+      <div class="form-group">
+        <label>Name</label>
+        <input id="staffName">
+      </div>
+
+      <div class="form-group">
+        <label>Role</label>
+        <select id="staffRole">
+          <option>Doctor</option>
+          <option>Nurse</option>
+          <option>Reception</option>
+          <option>Accounts</option>
+          <option>Laboratory</option>
+          <option>Pharmacy</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label>Department</label>
+        <input id="staffDepartment">
+      </div>
+
+    </div>
+
+    <button class="btn btn-primary" onclick="saveStaff()">Save Staff</button>
+  </div>
+</div>
+
+<!-- INVOICE MODAL -->
+<div id="invoiceModal" class="modal hidden">
+  <div class="modal-card">
+    <div class="modal-header">
+      <h3>New Invoice</h3>
+      <button class="close" onclick="closeModal('invoiceModal')">×</button>
+    </div>
+
+    <div class="form-group">
+      <label>Patient</label>
+      <select id="invoicePatient"></select>
+    </div>
+
+    <div class="grid two">
+
+      <div class="form-group">
+        <label>Amount</label>
+        <input id="invoiceAmount" type="number" min="0">
+      </div>
+
+      <div class="form-group">
+        <label>Paid</label>
+        <input id="invoicePaid" type="number" min="0" value="0">
+      </div>
+
+    </div>
+
+    <button class="btn btn-primary" onclick="saveInvoice()">Save Invoice</button>
+  </div>
+</div>
+
+<!-- LAB MODAL -->
+<div id="labModal" class="modal hidden">
+  <div class="modal-card">
+    <div class="modal-header">
+      <h3>New Laboratory Order</h3>
+      <button class="close" onclick="closeModal('labModal')">×</button>
+    </div>
+
+    <div class="form-group">
+      <label>Patient</label>
+      <select id="labPatient"></select>
+    </div>
+
+    <div class="form-group">
+      <label>Test</label>
+      <input id="labTest">
+    </div>
+
+    <div class="form-group">
+      <label>Result</label>
+      <textarea id="labResult"></textarea>
+    </div>
+
+    <button class="btn btn-primary" onclick="saveLab()">Save Lab Order</button>
+  </div>
+</div>
+
+<!-- PHARMACY MODAL -->
+<div id="pharmacyModal" class="modal hidden">
+  <div class="modal-card">
+    <div class="modal-header">
+      <h3>Add Medication</h3>
+      <button class="close" onclick="closeModal('pharmacyModal')">×</button>
+    </div>
+
+    <div class="form-group">
+      <label>Patient</label>
+      <select id="pharmacyPatient"></select>
+    </div>
+
+    <div class="grid two">
+
+      <div class="form-group">
+        <label>Medication</label>
+        <input id="pharmacyMedication">
+      </div>
+
+      <div class="form-group">
+        <label>Quantity</label>
+        <input id="pharmacyQuantity" type="number">
+      </div>
+
+    </div>
+
+    <button class="btn btn-primary" onclick="savePharmacy()">Save Medication</button>
+  </div>
+</div>
+
+<script>
+/* =========================================================
+   MEDICORE CORE DATA
+   ========================================================= */
+
+const DB_KEY = "medicore_v2_db";
+
+let db = {
+  patients: [],
+  appointments: [],
+  clinical: [],
+  instructions: [],
+  staff: [],
+  attendance: [],
+  invoices: [],
+  laboratory: [],
+  pharmacy: [],
+  notifications: [],
+  migrationHistory: [],
+  migration: {
+    provider: "AQUILLA",
+    format: ""
+  },
+  settings: {
+    hospitalName: "MediCore Hospital",
+    currency: "NGN"
+  },
+  license: {
+    status: "TRIAL",
+    type: "7-Day Trial",
+    activationDate: null,
+    expiryDate: null,
+    key: null
+  },
+  sync: {
+    pending: 0,
+    lastSync: null
+  }
+};
+
+let currentUser = null;
+
+const users = [
+  {username:"owner",password:"demo",name:"Hospital Owner",role:"Owner",department:"Administration"},
+  {username:"doctor",password:"demo",name:"Dr. Demo",role:"Doctor",department:"Clinical"},
+  {username:"nurse",password:"demo",name:"Nurse Demo",role:"Nurse",department:"Nursing"},
+  {username:"reception",password:"demo",name:"Reception Demo",role:"Reception",department:"Front Desk"},
+  {username:"accounts",password:"demo",name:"Accounts Demo",role:"Accounts",department:"Accounts"},
+  {username:"laboratory",password:"demo",name:"Laboratory Demo",role:"Laboratory",department:"Laboratory"},
+  {username:"pharmacy",password:"demo",name:"Pharmacy Demo",role:"Pharmacy",department:"Pharmacy"}
+];
+
+function loadDB(){
+  try{
+    const saved = localStorage.getItem(DB_KEY);
+    if(saved){
+      const parsed = JSON.parse(saved);
+      db = Object.assign(db, parsed);
+      db.migration = Object.assign(
+        {provider:"AQUILLA",format:""},
+        parsed.migration || {}
+      );
+      db.settings = Object.assign(
+        {hospitalName:"MediCore Hospital",currency:"NGN"},
+        parsed.settings || {}
+      );
+      db.sync = Object.assign(
+        {pending:0,lastSync:null},
+        parsed.sync || {}
+      );
+      db.license = Object.assign(
+        {status:"TRIAL",type:"7-Day Trial",activationDate:null,expiryDate:null,key:null},
+        parsed.license || {}
+      );
+    }
+  }catch(e){
+    console.error("Database load error",e);
+  }
+}
+
+function saveDB(){
+  try{
+    localStorage.setItem(DB_KEY,JSON.stringify(db));
+  }catch(e){
+    console.error("Database save error",e);
+  }
+}
+
+function markChanged(){
+  db.sync.pending = Number(db.sync.pending || 0) + 1;
+  saveDB();
+  updateSyncUI();
+}
+
+/* =========================================================
+   INDEXEDDB OFFLINE DATABASE FOUNDATION
+   ========================================================= */
+
+let offlineDB = null;
+
+function initIndexedDB(){
+  return new Promise(resolve=>{
+    if(!("indexedDB" in window)){
+      updateDBStatus("Unavailable");
+      resolve(false);
+      return;
+    }
+
+    const request = indexedDB.open("MediCoreOfflineDB",1);
+
+    request.onupgradeneeded = function(event){
+      const database = event.target.result;
+
+      const stores = [
+        "patients",
+        "appointments",
+        "clinical",
+        "instructions",
+        "staff",
+        "attendance",
+        "invoices",
+        "laboratory",
+        "pharmacy",
+        "syncQueue"
+      ];
+
+      stores.forEach(name=>{
+        if(!database.objectStoreNames.contains(name)){
+          database.createObjectStore(name,{keyPath:"id"});
+        }
+      });
+    };
+
+    request.onsuccess = function(event){
+      offlineDB = event.target.result;
+      updateDBStatus("Ready");
+      resolve(true);
+    };
+
+    request.onerror = function(){
+      updateDBStatus("Error");
+      resolve(false);
+    };
+  });
+}
+
+function updateDBStatus(status){
+  const ids = ["dbStatus","settingsDbStatus"];
+
+  ids.forEach(id=>{
+    const el = document.getElementById(id);
+    if(el) el.textContent = status;
+  });
+}
+
+function updateOfflineStore(storeName,item){
+  if(!offlineDB || !item || !item.id) return;
+
+  try{
+    const tx = offlineDB.transaction(storeName,"readwrite");
+    tx.objectStore(storeName).put(item);
+  }catch(e){
+    console.warn("IndexedDB write failed",e);
+  }
+}
+
+/* =========================================================
+   SERVICE WORKER
+   ========================================================= */
+
+function registerServiceWorker(){
+  if("serviceWorker" in navigator){
+    window.addEventListener("load",()=>{
+      navigator.serviceWorker.register("./service-worker.js")
+        .then(()=>{
+          console.log("MediCore offline engine ready");
+        })
+        .catch(error=>{
+          console.error("Service worker registration failed:",error);
+        });
+    });
+  }
+}
+
+/* =========================================================
+   LOGIN / ACCESS CONTROL
+   ========================================================= */
+
+function login(){
+  const username = document.getElementById("loginUsername").value.trim();
+  const password = document.getElementById("loginPassword").value;
+
+  const user = users.find(
+    u => u.username === username && u.password === password
+  );
+
+  if(!user){
+    const error = document.getElementById("loginError");
+    error.textContent = "Invalid username or password.";
+    error.classList.remove("hidden");
+    return;
+  }
+
+  currentUser = user;
+
+  document.getElementById("loginScreen").classList.add("hidden");
+  document.getElementById("app").classList.remove("hidden");
+
+  document.getElementById("userPill").textContent =
+    user.name + " • " + user.role;
+
+  applyRoleAccess();
+  renderAll();
+}
+
+function logout(){
+  currentUser = null;
+  document.getElementById("app").classList.add("hidden");
+  document.getElementById("loginScreen").classList.remove("hidden");
+}
+
+function allowed(page){
+  if(!currentUser) return false;
+
+  if(currentUser.role === "Owner") return true;
+
+  const permissions = {
+    Doctor:["dashboard","patients","appointments","clinical","instructions"],
+    Nurse:["dashboard","patients","appointments","clinical","instructions"],
+    Reception:["dashboard","patients","appointments"],
+    Accounts:["dashboard","patients","billing","reports"],
+    Laboratory:["dashboard","patients","laboratory"],
+    Pharmacy:["dashboard","patients","pharmacy"]
+  };
+
+  return (permissions[currentUser.role] || []).includes(page);
+}
+
+function applyRoleAccess(){
+  document.querySelectorAll(".nav-btn[data-page]").forEach(btn=>{
+    const page = btn.dataset.page;
+    btn.style.display = allowed(page) ? "" : "none";
+  });
+
+  if(!allowed("dashboard")){
+    const first = Object.keys({
+      patients:1,
+      appointments:1,
+      clinical:1,
+      billing:1,
+      laboratory:1,
+      pharmacy:1
+    }).find(p=>allowed(p));
+
+    if(first) go(first);
+  }
+}
+
+function go(page){
+  if(!allowed(page)) return;
+
+  document.querySelectorAll(".page").forEach(el=>{
+    el.classList.remove("active");
+  });
+
+  const target = document.getElementById("page-"+page);
+  if(!target) return;
+
+  target.classList.add("active");
+
+  document.querySelectorAll(".nav-btn[data-page]").forEach(btn=>{
+    btn.classList.toggle("active",btn.dataset.page === page);
+  });
+
+  const titles = {
+    dashboard:"Hospital Command Center",
+    patients:"Patients",
+    appointments:"Appointments",
+    clinical:"Clinical Records",
+    instructions:"Instructions",
+    staff:"Staff Management",
+    attendance:"Attendance",
+    billing:"Billing & Payments",
+    reports:"Reports",
+    notifications:"Notifications",
+    laboratory:"Laboratory",
+    pharmacy:"Pharmacy",
+    migration:"EMR Migration Center",
+    settings:"Settings",
+    license:"MediCore License"
+  };
+
+  document.getElementById("pageTitle").textContent =
+    titles[page] || "MediCore";
+
+  document.getElementById("sidebar").classList.remove("open");
+
+  renderAll();
+}
+
+/* =========================================================
+   UTILITY
+   ========================================================= */
+
+function uid(prefix){
+  return prefix + "-" +
+    Date.now().toString(36) + "-" +
+    Math.random().toString(36).substring(2,8);
+}
+
+function today(){
+  return new Date().toISOString().slice(0,10);
+}
+
+function now(){
+  return new Date().toLocaleString();
+}
+
+function money(value){
+  return "₦" + Number(value || 0).toLocaleString("en-NG");
+}
+
+function patientName(id){
+  const p = db.patients.find(x=>x.id===id);
+  return p ? `${p.firstName} ${p.lastName}` : "Unknown Patient";
+}
+
+function closeModal(id){
+  document.getElementById(id).classList.add("hidden");
+}
+
+function openModal(id){
+  document.getElementById(id).classList.remove("hidden");
+}
+
+function toggleSidebar(){
+  document.getElementById("sidebar").classList.toggle("open");
+}
+
+/* =========================================================
+   PATIENTS
+   ========================================================= */
+
+function openPatientModal(){
+  ["patientFirstName","patientLastName","patientDob","patientPhone","patientEmail","patientAddress"]
+    .forEach(id=>{
+      document.getElementById(id).value="";
+    });
+
+  document.getElementById("patientGender").value="";
+  openModal("patientModal");
+}
+
+function savePatient(){
+  const firstName = document.getElementById("patientFirstName").value.trim();
+  const lastName = document.getElementById("patientLastName").value.trim();
+
+  if(!firstName || !lastName){
+    alert("First name and last name are required.");
+    return;
+  }
+
+  const patient = {
+    id:uid("PAT"),
+    mrn:"MC-" + String(db.patients.length + 1).padStart(5,"0"),
+    firstName,
+    lastName,
+    gender:document.getElementById("patientGender").value,
+    dob:document.getElementById("patientDob").value,
+    phone:document.getElementById("patientPhone").value,
+    email:document.getElementById("patientEmail").value,
+    address:document.getElementById("patientAddress").value,
+    registeredAt:now(),
+    registeredDate:today()
+  };
+
+  db.patients.unshift(patient);
+
+  updateOfflineStore("patients",patient);
+  markChanged();
+
+  closeModal("patientModal");
+  renderAll();
+}
+
+function renderPatients(){
+  const tbody = document.getElementById("patientsTable");
+  if(!tbody) return;
+
+  const query = (document.getElementById("patientSearch")?.value || "")
+    .toLowerCase();
+
+  const rows = db.patients.filter(p=>{
+    const text = `${p.mrn} ${p.firstName} ${p.lastName} ${p.phone}`.toLowerCase();
+    return text.includes(query);
+  });
+
+  tbody.innerHTML = rows.length
+    ? rows.map(p=>`
+      <tr>
+        <td>${escapeHTML(p.mrn)}</td>
+        <td>${escapeHTML(p.firstName+" "+p.lastName)}</td>
+        <td>${escapeHTML(p.gender || "-")}</td>
+        <td>${escapeHTML(p.dob || "-")}</td>
+        <td>${escapeHTML(p.phone || "-")}</td>
+        <td>${escapeHTML(p.registeredAt)}</td>
+        <td><button class="btn btn-secondary small" onclick="viewPatient('${p.id}')">View</button></td>
+      </tr>
+    `).join("")
+    : `<tr><td colspan="7"><div class="empty">No patients found.</div></td></tr>`;
+}
+
+function viewPatient(id){
+  const p = db.patients.find(x=>x.id===id);
+  if(!p) return;
+
+  alert(
+    `Patient\n\n`+
+    `MRN: ${p.mrn}\n`+
+    `Name: ${p.firstName} ${p.lastName}\n`+
+    `Gender: ${p.gender || "-"}\n`+
+    `DOB: ${p.dob || "-"}\n`+
+    `Phone: ${p.phone || "-"}`
+  );
+}
+
+/* =========================================================
+   APPOINTMENTS
+   ========================================================= */
+
+function populatePatientSelect(id){
+  const select = document.getElementById(id);
+  if(!select) return;
+
+  select.innerHTML =
+    `<option value="">Select patient</option>`+
+    db.patients.map(p=>
+      `<option value="${p.id}">
+        ${escapeHTML(p.mrn)} — ${escapeHTML(p.firstName+" "+p.lastName)}
+      </option>`
+    ).join("");
+}
+
+function openAppointmentModal(){
+  populatePatientSelect("appointmentPatient");
+
+  document.getElementById("appointmentDate").value=today();
+  document.getElementById("appointmentTime").value="";
+  document.getElementById("appointmentDoctor").value="";
+
+  openModal("appointmentModal");
+}
+
+function saveAppointment(){
+  const patientId = document.getElementById("appointmentPatient").value;
+
+  if(!patientId){
+    alert("Please select a patient.");
+    return;
+  }
+
+  const appointment = {
+    id:uid("APT"),
+    patientId,
+    date:document.getElementById("appointmentDate").value,
+    time:document.getElementById("appointmentTime").value,
+    doctor:document.getElementById("appointmentDoctor").value,
+    department:document.getElementById("appointmentDepartment").value,
+    status:"Scheduled",
+    createdAt:now()
+  };
+
+  db.appointments.unshift(appointment);
+  updateOfflineStore("appointments",appointment);
+  markChanged();
+
+  closeModal("appointmentModal");
+  renderAll();
+}
+
+function renderAppointments(){
+  const tbody=document.getElementById("appointmentsTable");
+  if(!tbody)return;
+
+  tbody.innerHTML=db.appointments.length
+    ? db.appointments.map(a=>`
+      <tr>
+        <td>${escapeHTML(a.date)}</td>
+        <td>${escapeHTML(a.time || "-")}</td>
+        <td>${escapeHTML(patientName(a.patientId))}</td>
+        <td>${escapeHTML(a.doctor || "-")}</td>
+        <td>${escapeHTML(a.department || "-")}</td>
+        <td><span class="badge badge-blue">${escapeHTML(a.status)}</span></td>
+      </tr>
+    `).join("")
+    : `<tr><td colspan="6"><div class="empty">No appointments.</div></td></tr>`;
+}
+
+/* =========================================================
+   CLINICAL
+   ========================================================= */
+
+function openClinicalModal(){
+  populatePatientSelect("clinicalPatient");
+  document.getElementById("clinicalDoctor").value="";
+  document.getElementById("clinicalDiagnosis").value="";
+  document.getElementById("clinicalNotes").value="";
+  document.getElementById("clinicalTreatment").value="";
+  openModal("clinicalModal");
+}
+
+function saveClinical(){
+  const patientId=document.getElementById("clinicalPatient").value;
+
+  if(!patientId){
+    alert("Please select a patient.");
+    return;
+  }
+
+  const record={
+    id:uid("CLN"),
+    patientId,
+    doctor:document.getElementById("clinicalDoctor").value,
+    diagnosis:document.getElementById("clinicalDiagnosis").value,
+    notes:document.getElementById("clinicalNotes").value,
+    treatment:document.getElementById("clinicalTreatment").value,
+    date:today(),
+    createdAt:now(),
+    status:"Completed"
+  };
+
+  db.clinical.unshift(record);
+  updateOfflineStore("clinical",record);
+  markChanged();
+
+  closeModal("clinicalModal");
+  renderAll();
+}
+
+function renderClinical(){
+  const tbody=document.getElementById("clinicalTable");
+  if(!tbody)return;
+
+  tbody.innerHTML=db.clinical.length
+    ? db.clinical.map(c=>`
+      <tr>
+        <td>${escapeHTML(c.date)}</td>
+        <td>${escapeHTML(patientName(c.patientId))}</td>
+        <td>${escapeHTML(c.doctor || "-")}</td>
+        <td>${escapeHTML(c.diagnosis || "-")}</td>
+        <td>${escapeHTML(c.treatment || "-")}</td>
+        <td><span class="badge badge-green">${escapeHTML(c.status)}</span></td>
+      </tr>
+    `).join("")
+    : `<tr><td colspan="6"><div class="empty">No clinical records.</div></td></tr>`;
+}
+
+/* =========================================================
+   INSTRUCTIONS
+   ========================================================= */
+
+function openInstructionModal(){
+  document.getElementById("instructionTo").value="";
+  document.getElementById("instructionText").value="";
+  openModal("instructionModal");
+}
+
+function saveInstruction(){
+  const item={
+    id:uid("INS"),
+    to:document.getElementById("instructionTo").value,
+    text:document.getElementById("instructionText").value,
+    date:now(),
+    status:"Pending"
+  };
+
+  db.instructions.unshift(item);
+  markChanged();
+
+  closeModal("instructionModal");
+  renderAll();
+}
+
+function renderInstructions(){
+  const el=document.getElementById("instructionsList");
+  if(!el)return;
+
+  el.innerHTML=db.instructions.length
+    ? db.instructions.map(i=>`
+      <div class="alert alert-info">
+        <strong>${escapeHTML(i.to || "Hospital Staff")}</strong><br>
+        ${escapeHTML(i.text || "")}
+        <div class="small muted" style="margin-top:5px">${escapeHTML(i.date)}</div>
+      </div>
+    `).join("")
+    : `<div class="empty">No instructions.</div>`;
+}
+
+/* =========================================================
+   STAFF
+   ========================================================= */
+
+function openStaffModal(){
+  document.getElementById("staffName").value="";
+  document.getElementById("staffDepartment").value="";
+  openModal("staffModal");
+}
+
+function saveStaff(){
+  const name=document.getElementById("staffName").value.trim();
+
+  if(!name){
+    alert("Staff name is required.");
+    return;
+  }
+
+  const staff={
+    id:uid("STF"),
+    name,
+    role:document.getElementById("staffRole").value,
+    department:document.getElementById("staffDepartment").value,
+    status:"Active",
+    lastActivity:now()
+  };
+
+  db.staff.unshift(staff);
+  markChanged();
+
+  closeModal("staffModal");
+  renderAll();
+}
+
+function renderStaff(){
+  const tbody=document.getElementById("staffTable");
+  if(!tbody)return;
+
+  tbody.innerHTML=db.staff.length
+    ? db.staff.map(s=>`
+      <tr>
+        <td>${escapeHTML(s.name)}</td>
+        <td>${escapeHTML(s.role)}</td>
+        <td>${escapeHTML(s.department || "-")}</td>
+        <td><span class="badge badge-green">${escapeHTML(s.status)}</span></td>
+        <td>${escapeHTML(s.lastActivity || "-")}</td>
+      </tr>
+    `).join("")
+    : `<tr><td colspan="5"><div class="empty">No staff records.</div></td></tr>`;
+}
+
+/* =========================================================
+   ATTENDANCE
+   ========================================================= */
+
+function markAttendance(type){
+  if(!currentUser)return;
+
+  const record={
+    id:uid("ATT"),
+    staff:currentUser.name,
+    date:today(),
+    timeIn:type==="IN"?new Date().toLocaleTimeString():"",
+    timeOut:type==="OUT"?new Date().toLocaleTimeString():"",
+    status:type==="IN"?"Present":"Clocked Out"
+  };
+
+  db.attendance.unshift(record);
+  markChanged();
+  renderAttendance();
+}
+
+function renderAttendance(){
+  const tbody=document.getElementById("attendanceTable");
+  if(!tbody)return;
+
+  tbody.innerHTML=db.attendance.length
+    ? db.attendance.map(a=>`
+      <tr>
+        <td>${escapeHTML(a.staff)}</td>
+        <td>${escapeHTML(a.date)}</td>
+        <td>${escapeHTML(a.timeIn || "-")}</td>
+        <td>${escapeHTML(a.timeOut || "-")}</td>
+        <td>${escapeHTML(a.status)}</td>
+      </tr>
+    `).join("")
+    : `<tr><td colspan="5"><div class="empty">No attendance records.</div></td></tr>`;
+}
+
+/* =========================================================
+   BILLING
+   ========================================================= */
+
+function openInvoiceModal(){
+  populatePatientSelect("invoicePatient");
+  document.getElementById("invoiceAmount").value="";
+  document.getElementById("invoicePaid").value="0";
+  openModal("invoiceModal");
+}
+
+function saveInvoice(){
+  const patientId=document.getElementById("invoicePatient").value;
+  const amount=Number(document.getElementById("invoiceAmount").value);
+  const paid=Number(document.getElementById("invoicePaid").value);
+
+  if(!patientId || amount<=0){
+    alert("Please select a patient and enter a valid amount.");
+    return;
+  }
+
+  const invoice={
+    id:uid("INV"),
+    invoiceNo:"INV-"+String(db.invoices.length+1).padStart(5,"0"),
+    patientId,
+    amount,
+    paid,
+    balance:Math.max(amount-paid,0),
+    date:today(),
+    status:paid>=amount?"Paid":paid>0?"Part Paid":"Outstanding"
+  };
+
+  db.invoices.unshift(invoice);
+  markChanged();
+
+  closeModal("invoiceModal");
+  renderAll();
+}
+
+function renderBilling(){
+  const tbody=document.getElementById("billingTable");
+  if(!tbody)return;
+
+  const total=db.invoices.reduce((s,i)=>s+Number(i.amount||0),0);
+  const collected=db.invoices.reduce((s,i)=>s+Number(i.paid||0),0);
+  const outstanding=db.invoices.reduce((s,i)=>s+Number(i.balance||0),0);
+
+  document.getElementById("billingTotal").textContent=money(total);
+  document.getElementById("billingCollected").textContent=money(collected);
+  document.getElementById("billingOutstanding").textContent=money(outstanding);
+  document.getElementById("billingInvoices").textContent=db.invoices.length;
+
+  tbody.innerHTML=db.invoices.length
+    ? db.invoices.map(i=>`
+      <tr>
+        <td>${escapeHTML(i.invoiceNo)}</td>
+        <td>${escapeHTML(patientName(i.patientId))}</td>
+        <td>${money(i.amount)}</td>
+        <td>${money(i.paid)}</td>
+        <td>${money(i.balance)}</td>
+        <td><span class="badge ${i.status==="Paid"?"badge-green":i.status==="Part Paid"?"badge-orange":"badge-red"}">${escapeHTML(i.status)}</span></td>
+      </tr>
+    `).join("")
+    : `<tr><td colspan="6"><div class="empty">No invoices.</div></td></tr>`;
+}
+
+/* =========================================================
+   LABORATORY
+   ========================================================= */
+
+function openLabModal(){
+  populatePatientSelect("labPatient");
+  document.getElementById("labTest").value="";
+  document.getElementById("labResult").value="";
+  openModal("labModal");
+}
+
+function saveLab(){
+  const patientId=document.getElementById("labPatient").value;
+
+  if(!patientId){
+    alert("Please select a patient.");
+    return;
+  }
+
+  const lab={
+    id:uid("LAB"),
+    patientId,
+    test:document.getElementById("labTest").value,
+    result:document.getElementById("labResult").value,
+    date:today(),
+    status:"Pending"
+  };
+
+  db.laboratory.unshift(lab);
+  markChanged();
+
+  closeModal("labModal");
+  renderAll();
+}
+
+function renderLab(){
+  const tbody=document.getElementById("labTable");
+  if(!tbody)return;
+
+  tbody.innerHTML=db.laboratory.length
+    ? db.laboratory.map(l=>`
+      <tr>
+        <td>${escapeHTML(l.date)}</td>
+        <td>${escapeHTML(patientName(l.patientId))}</td>
+        <td>${escapeHTML(l.test || "-")}</td>
+        <td>${escapeHTML(l.result || "-")}</td>
+        <td><span class="badge badge-orange">${escapeHTML(l.status)}</span></td>
+      </tr>
+    `).join("")
+    : `<tr><td colspan="5"><div class="empty">No laboratory orders.</div></td></tr>`;
+}
+
+/* =========================================================
+   PHARMACY
+   ========================================================= */
+
+function openPharmacyModal(){
+  populatePatientSelect("pharmacyPatient");
+  document.getElementById("pharmacyMedication").value="";
+  document.getElementById("pharmacyQuantity").value="";
+  openModal("pharmacyModal");
+}
+
+function savePharmacy(){
+  const patientId=document.getElementById("pharmacyPatient").value;
+
+  if(!patientId){
+    alert("Please select a patient.");
+    return;
+  }
+
+  const item={
+    id:uid("PHM"),
+    patientId,
+    medication:document.getElementById("pharmacyMedication").value,
+    quantity:Number(document.getElementById("pharmacyQuantity").value || 0),
+    date:today(),
+    status:"Recorded"
+  };
+
+  db.pharmacy.unshift(item);
+  markChanged();
+
+  closeModal("pharmacyModal");
+  renderAll();
+}
+
+function renderPharmacy(){
+  const tbody=document.getElementById("pharmacyTable");
+  if(!tbody)return;
+
+  tbody.innerHTML=db.pharmacy.length
+    ? db.pharmacy.map(p=>`
+      <tr>
+        <td>${escapeHTML(p.date)}</td>
+        <td>${escapeHTML(patientName(p.patientId))}</td>
+        <td>${escapeHTML(p.medication || "-")}</td>
+        <td>${escapeHTML(String(p.quantity || 0))}</td>
+        <td><span class="badge badge-green">${escapeHTML(p.status)}</span></td>
+      </tr>
+    `).join("")
+    : `<tr><td colspan="5"><div class="empty">No pharmacy records.</div></td></tr>`;
+}
+
+/* =========================================================
+   DASHBOARD
+   ========================================================= */
+
+function renderDashboard(){
+  const totalPatients=db.patients.length;
+  const todayAppointments=db.appointments.filter(a=>a.date===today());
+  const collected=db.invoices.reduce((s,i)=>s+Number(i.paid||0),0);
+  const outstanding=db.invoices.reduce((s,i)=>s+Number(i.balance||0),0);
+
+  document.getElementById("statPatients").textContent=totalPatients;
+  document.getElementById("statAppointments").textContent=todayAppointments.length;
+  document.getElementById("statCollected").textContent=money(collected);
+  document.getElementById("statOutstanding").textContent=money(outstanding);
+  document.getElementById("statStaff").textContent=db.staff.length;
+  document.getElementById("statLab").textContent=db.laboratory.length;
+  document.getElementById("statPharmacy").textContent=db.pharmacy.length;
+  document.getElementById("statPendingSync").textContent=db.sync.pending || 0;
+
+  const todayPatients=db.patients.filter(p=>p.registeredDate===today()).length;
+  const todayLabs=db.laboratory.filter(l=>l.date===today()).length;
+  const todayPrescriptions=db.pharmacy.filter(p=>p.date===today()).length;
+
+  document.getElementById("todayPatients").textContent=todayPatients;
+  document.getElementById("todayAppts").textContent=todayAppointments.length;
+  document.getElementById("todayWaiting").textContent=
+    todayAppointments.filter(a=>a.status==="Scheduled").length;
+  document.getElementById("todayConsultations").textContent=
+    db.clinical.filter(c=>c.date===today()).length;
+  document.getElementById("todayLabs").textContent=todayLabs;
+  document.getElementById("todayPrescriptions").textContent=todayPrescriptions;
+
+  const dashAppts=document.getElementById("dashboardAppointments");
+
+  dashAppts.innerHTML=todayAppointments.length
+    ? todayAppointments.slice(0,6).map(a=>`
+      <div class="kpi">
+        <span>
+          <strong>${escapeHTML(a.time || "--:--")}</strong>
+          — ${escapeHTML(patientName(a.patientId))}
+        </span>
+        <span class="badge badge-blue">${escapeHTML(a.department || "")}</span>
+      </div>
+    `).join("")
+    : `<div class="empty">No appointments scheduled for today.</div>`;
+
+  const alerts=[];
+
+  if(outstanding>0){
+    alerts.push(`
+      <div class="alert alert-warning">
+        <strong>Billing:</strong> ${money(outstanding)} outstanding.
+      </div>
+    `);
+  }
+
+  if(db.instructions.filter(i=>i.status==="Pending").length){
+    alerts.push(`
+      <div class="alert alert-info">
+        <strong>Instructions:</strong>
+        ${db.instructions.filter(i=>i.status==="Pending").length} pending instruction(s).
+      </div>
+    `);
+  }
+
+  if(db.sync.pending>0){
+    alerts.push(`
+      <div class="alert alert-warning">
+        <strong>Offline changes:</strong>
+        ${db.sync.pending} change(s) waiting for synchronization.
+      </div>
+    `);
+  }
+
+  if(!alerts.length){
+    alerts.push(`
+      <div class="alert alert-success">
+        No major attention items at the moment.
+      </div>
+    `);
+  }
+
+  document.getElementById("dashboardAlerts").innerHTML=alerts.join("");
+
+  const recent=document.getElementById("recentPatients");
+
+  recent.innerHTML=db.patients.length
+    ? db.patients.slice(0,8).map(p=>`
+      <tr>
+        <td>${escapeHTML(p.mrn)}</td>
+        <td>${escapeHTML(p.firstName+" "+p.lastName)}</td>
+        <td>${escapeHTML(p.gender || "-")}</td>
+        <td>${escapeHTML(p.phone || "-")}</td>
+        <td>${escapeHTML(p.registeredAt)}</td>
+      </tr>
+    `).join("")
+    : `<tr><td colspan="5"><div class="empty">No patients registered.</div></td></tr>`;
+}
+
+/* =========================================================
+   REPORTS / NOTIFICATIONS
+   ========================================================= */
+
+function renderReports(){
+  const total=db.invoices.reduce((s,i)=>s+Number(i.paid||0),0);
+
+  document.getElementById("reportPatients").textContent=db.patients.length;
+  document.getElementById("reportClinical").textContent=db.clinical.length;
+  document.getElementById("reportCollected").textContent=money(total);
+}
+
+function renderNotifications(){
+  const el=document.getElementById("notificationsList");
+
+  const notifications=[
+    {
+      title:"Offline engine",
+      text:navigator.onLine
+        ?"Internet connection currently available."
+        :"MediCore is currently operating offline."
+    },
+    {
+      title:"Migration",
+      text:"AQUILLA migration adapter is awaiting the hospital's actual export structure."
+    }
+  ];
+
+  el.innerHTML=notifications.map(n=>`
+    <div class="alert alert-info">
+      <strong>${escapeHTML(n.title)}</strong><br>
+      ${escapeHTML(n.text)}
+    </div>
+  `).join("");
+}
+
+/* =========================================================
+   SETTINGS
+   ========================================================= */
+
+function saveSettings(){
+  db.settings.hospitalName=
+    document.getElementById("hospitalName").value || "MediCore Hospital";
+
+  db.settings.currency=
+    document.getElementById("currency").value;
+
+  saveDB();
+
+  document.getElementById("hospitalNameTop").textContent=
+    db.settings.hospitalName;
+
+  alert("Settings saved.");
+}
+
+function renderSettings(){
+  document.getElementById("hospitalName").value=
+    db.settings.hospitalName;
+
+  document.getElementById("hospitalNameTop").textContent=
+    db.settings.hospitalName;
+
+  document.getElementById("settingsPending").textContent=
+    db.sync.pending || 0;
+
+  document.getElementById("settingsLastSync").textContent=
+    db.sync.lastSync || "Not synchronized";
+}
+
+/* =========================================================
+   MIGRATION
+   ========================================================= */
+
+function saveMigrationProvider(){
+  db.migration.provider=
+    document.getElementById("migrationProvider").value || "AQUILLA";
+
+  db.migration.format=
+    document.getElementById("migrationFormat").value;
+
+  saveDB();
+}
+
+function downloadMigrationChecklist(){
+  const content=
+`MEDICORE — AQUILLA EMR MIGRATION CHECKLIST
+
+1. Obtain complete AQUILLA export/backup.
+2. Preserve original export as a read-only source archive.
+3. Confirm export format and data dictionary.
+4. Identify patient MRN/source identifiers.
+5. Map AQUILLA fields to MediCore fields.
+6. Preserve historical dates.
+7. Review patients, encounters, diagnoses and clinical notes.
+8. Review prescriptions and medication history.
+9. Review laboratory results.
+10. Review billing, invoices, payments and balances.
+11. Detect duplicate patients.
+12. Detect missing required fields.
+13. Stage migration before final import.
+14. Reconcile record counts.
+15. Reconcile financial totals.
+16. Owner approves migration.
+17. Import into MediCore.
+18. Verify migrated totals.
+19. Keep AQUILLA available in read-only mode until sign-off.
+20. Record migration completion in audit history.
+`;
+
+  downloadText("medicore-aquilla-migration-checklist.txt",content);
+}
+
+/* =========================================================
+   LICENSE FOUNDATION
+   ========================================================= */
+
+function renderLicense(){
+  const l=db.license || {};
+
+  document.getElementById("licenseStatus").textContent=l.status || "TRIAL";
+  document.getElementById("licenseHospital").textContent=
+    db.settings.hospitalName;
+
+  document.getElementById("licenseType").textContent=
+    l.type || "7-Day Trial";
+
+  document.getElementById("licenseActivation").textContent=
+    l.activationDate || "Not activated";
+
+  document.getElementById("licenseExpiry").textContent=
+    l.expiryDate || "Not activated";
+
+  let days="—";
+
+  if(l.expiryDate){
+    const diff=new Date(l.expiryDate).getTime()-Date.now();
+    days=Math.max(0,Math.ceil(diff/86400000));
+  }
+
+  document.getElementById("licenseDays").textContent=days;
+}
+
+function activateLicense(){
+  const key=document.getElementById("activationKey").value.trim();
+
+  if(!key){
+    showLicenseMessage("Please enter an activation key.","danger");
+    return;
+  }
+
+  /*
+    Temporary prototype activation format.
+
+    The proper cryptographically signed CMD license
+    generator will replace this validation layer.
+  */
+
+  if(key.startsWith("MEDICORE-")){
+    const activation=new Date();
+    const expiry=new Date(
+      activation.getTime()+7*24*60*60*1000
+    );
+
+    db.license={
+      status:"ACTIVE",
+      type:"7-Day Trial",
+      activationDate:activation.toLocaleString(),
+      expiryDate:expiry.toLocaleString(),
+      key
+    };
+
+    saveDB();
+    renderLicense();
+
+    showLicenseMessage(
+      "MediCore activated successfully for 7 days.",
+      "success"
+    );
+  }else{
+    showLicenseMessage(
+      "Invalid activation key.",
+      "danger"
+    );
+  }
+}
+
+function showLicenseMessage(text,type){
+  const el=document.getElementById("licenseMessage");
+
+  const cls=
+    type==="success"
+      ?"alert-success"
+      :type==="danger"
+      ?"alert-danger"
+      :"alert-info";
+
+  el.innerHTML=`<div class="alert ${cls}">${escapeHTML(text)}</div>`;
+}
+
+/* =========================================================
+   SYNC / NETWORK STATUS
+   ========================================================= */
+
+function updateNetworkStatus(){
+  const online=navigator.onLine;
+
+  const network=document.getElementById("networkStatus");
+  const sync=document.getElementById("syncStatus");
+  const syncNetwork=document.getElementById("syncNetwork");
+
+  if(online){
+    network.textContent="🟢 ONLINE";
+    network.className="status online";
+
+    sync.textContent=
+      db.sync.pending>0
+        ?"Pending sync"
+        :"Synced";
+
+    sync.className=
+      db.sync.pending>0
+        ?"status syncing"
+        :"status online";
+
+    syncNetwork.textContent="Online";
+  }else{
+    network.textContent="🟠 OFFLINE";
+    network.className="status offline";
+
+    sync.textContent=
+      `${db.sync.pending || 0} pending`;
+
+    sync.className="status offline";
+
+    syncNetwork.textContent="Offline";
+  }
+
+  document.getElementById("pendingChanges").textContent=
+    db.sync.pending || 0;
+
+  document.getElementById("lastSync").textContent=
+    db.sync.lastSync || "Not synchronized";
+}
+
+function updateSyncUI(){
+  updateNetworkStatus();
+
+  const ids=[
+    ["statPendingSync",db.sync.pending || 0],
+    ["settingsPending",db.sync.pending || 0],
+    ["pendingChanges",db.sync.pending || 0]
+  ];
+
+  ids.forEach(([id,value])=>{
+    const el=document.getElementById(id);
+    if(el)el.textContent=value;
+  });
+}
+
+window.addEventListener("online",()=>{
+  updateNetworkStatus();
+  renderNotifications();
+});
+
+window.addEventListener("offline",()=>{
+  updateNetworkStatus();
+  renderNotifications();
+});
+
+/* =========================================================
+   EXPORT
+   ========================================================= */
+
+function exportData(type){
+  if(type==="json"){
+    downloadText(
+      "medicore-backup.json",
+      JSON.stringify(db,null,2)
+    );
+    return;
+  }
+
+  if(type==="csv"){
+    const rows=[
+      ["MRN","First Name","Last Name","Gender","DOB","Phone","Registered"]
+    ];
+
+    db.patients.forEach(p=>{
+      rows.push([
+        p.mrn,
+        p.firstName,
+        p.lastName,
+        p.gender,
+        p.dob,
+        p.phone,
+        p.registeredAt
+      ]);
+    });
+
+    const csv=rows.map(row=>
+      row.map(v=>`"${String(v ?? "").replace(/"/g,'""')}"`).join(",")
+    ).join("\n");
+
+    downloadText("medicore-patients.csv",csv);
+  }
+}
+
+function downloadText(filename,text){
+  const blob=new Blob([text],{type:"text/plain;charset=utf-8"});
+  const url=URL.createObjectURL(blob);
+
+  const a=document.createElement("a");
+  a.href=url;
+  a.download=filename;
+  document.body.appendChild(a);
+  a.click();
+  a.remove();
+
+  URL.revokeObjectURL(url);
+}
+
+/* =========================================================
+   SECURITY / DISPLAY
+   ========================================================= */
+
+function escapeHTML(value){
+  return String(value ?? "")
+    .replace(/&/g,"&amp;")
+    .replace(/</g,"&lt;")
+    .replace(/>/g,"&gt;")
+    .replace(/"/g,"&quot;")
+    .replace(/'/g,"&#039;");
+}
+
+/* =========================================================
+   MASTER RENDER
+   ========================================================= */
+
+function renderAll(){
+  renderDashboard();
+  renderPatients();
+  renderAppointments();
+  renderClinical();
+  renderInstructions();
+  renderStaff();
+  renderAttendance();
+  renderBilling();
+  renderReports();
+  renderNotifications();
+  renderLab();
+  renderPharmacy();
+  renderSettings();
+  renderLicense();
+  renderMigration();
+  updateNetworkStatus();
+}
+
+/* =========================================================
+   MIGRATION HISTORY RENDER
+   ========================================================= */
+
+function renderMigration(){
+  const history=document.getElementById("migrationHistory");
+  if(!history)return;
+
+  if(!db.migrationHistory.length){
+    history.innerHTML=
+      `<div class="empty">No migration has been performed yet.</div>`;
+    return;
+  }
+
+  history.innerHTML=db.migrationHistory.map(m=>`
+    <div class="kpi">
+      <span>
+        <strong>${escapeHTML(m.provider)}</strong>
+        <br>
+        <span class="small muted">${escapeHTML(m.date)}</span>
+      </span>
+      <span class="badge badge-blue">${escapeHTML(m.status)}</span>
+    </div>
+  `).join("");
+}
+
+/* =========================================================
+   DEMO DATA
+   ========================================================= */
+
+function seedDemoData(){
+  if(db.patients.length || db.staff.length)return;
+
+  db.patients=[
+    {
+      id:uid("PAT"),
+      mrn:"MC-00001",
+      firstName:"John",
+      lastName:"Ade",
+      gender:"Male",
+      dob:"1985-04-12",
+      phone:"08000000001",
+      email:"",
+      address:"",
+      registeredAt:now(),
+      registeredDate:today()
+    },
+    {
+      id:uid("PAT"),
+      mrn:"MC-00002",
+      firstName:"Mary",
+      lastName:"Okafor",
+      gender:"Female",
+      dob:"1990-07-18",
+      phone:"08000000002",
+      email:"",
+      address:"",
+      registeredAt:now(),
+      registeredDate:today()
+    }
+  ];
+
+  db.staff=[
+    {
+      id:uid("STF"),
+      name:"Dr. Demo",
+      role:"Doctor",
+      department:"Clinical",
+      status:"Active",
+      lastActivity:now()
+    },
+    {
+      id:uid("STF"),
+      name:"Nurse Demo",
+      role:"Nurse",
+      department:"Nursing",
+      status:"Active",
+      lastActivity:now()
+    },
+    {
+      id:uid("STF"),
+      name:"Reception Demo",
+      role:"Reception",
+      department:"Front Desk",
+      status:"Active",
+      lastActivity:now()
+    }
+  ];
+
+  db.appointments=[
+    {
+      id:uid("APT"),
+      patientId:db.patients[0].id,
+      date:today(),
+      time:"09:00",
+      doctor:"Dr. Demo",
+      department:"General Medicine",
+      status:"Scheduled",
+      createdAt:now()
+    },
+    {
+      id:uid("APT"),
+      patientId:db.patients[1].id,
+      date:today(),
+      time:"11:30",
+      doctor:"Dr. Demo",
+      department:"General Medicine",
+      status:"Scheduled",
+      createdAt:now()
+    }
+  ];
+
+  db.invoices=[
+    {
+      id:uid("INV"),
+      invoiceNo:"INV-00001",
+      patientId:db.patients[0].id,
+      amount:25000,
+      paid:15000,
+      balance:10000,
+      date:today(),
+      status:"Part Paid"
+    }
+  ];
+
+  db.instructions=[
+    {
+      id:uid("INS"),
+      to:"Reception",
+      text:"Confirm today's appointment list and patient arrivals.",
+      date:now(),
+      status:"Pending"
+    }
+  ];
+
+  db.migration.provider="AQUILLA";
+  db.migration.format="";
+
+  saveDB();
+}
+
+/* =========================================================
+   STARTUP
+   ========================================================= */
+
+loadDB();
+seedDemoData();
+
+initIndexedDB();
+registerServiceWorker();
+
+document.addEventListener("DOMContentLoaded",()=>{
+  renderAll();
+  updateNetworkStatus();
+});
+
+</script>
+
+</body>
+</html>
